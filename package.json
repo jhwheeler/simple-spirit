@@ -1,0 +1,23 @@
+{
+  "name": "simple-spirit",
+  "version": "1.0.0",
+  "description": "Center yourself and clear everything else away with the piercing wisdom of Applied Simplicity: the Simple Spirit App gives you simple, yet powerful tools you can use throughout your day to help you on your spiritual journey.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhwheeler/simple-spirit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhwheeler/simple-spirit/issues"
+  },
+  "homepage": "https://github.com/jhwheeler/simple-spirit#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
