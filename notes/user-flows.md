@@ -3,9 +3,9 @@
 ## Daily Aphorism Screen
 
 1. Click/tap on aphorism
----
+
 2. Scroll down
----
+
 3. Click corner login button
 
 {
@@ -17,11 +17,11 @@
 ## Tool Screen
 
 1. Click/tap on tool
----
+
 2. Scroll down
----
+
 3. Scroll up
----
+
 4. Click corner login button
 
 {
@@ -34,9 +34,9 @@
 ## Experience Recording Screen
 
 1. Type in comment and submits
----
+
 2. Scroll up
----
+
 3. Click corner login button
 
 {
@@ -49,9 +49,9 @@
 ## Login Screen
 
 1. Enter valid username/password
----
+
 2. Enter invalid username
----
+
 3. Enter invalid password
 
 {
