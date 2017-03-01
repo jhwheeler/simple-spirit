@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: HzJzYdDvcpMm/lcoo32+MZp7nbvNHqwYeXAyqx3qesde3TWsxJ5pB24qQUOY+gVmNlya2EOtybYfbQS5Rqk9LxTnBXgGcHiLevre9qyu0D47jgJKbMnOT2MljEvd2Q/+PMCfFV5twkFNYYLX/di+HV37mclSIE+BBi6VadbXwebt9tQt9qdvXVuSlqGc9r6Zc0C4whx8ZvK3bcWxsZoEfwe0XgxZ6xpRaM2ADz139VRMeqjeU0L7YsXFh5tOv030I8FNvdjKnaqop1NLTmwj5yYpaUCEkQp++zIto8FhsoOqk7uyNyPfo4kYBa7ky2th6G8+6gjN/lJwmYVpk4TvSQNX1N91e8zJ8Rb/owHX2QuFDTFsf+aAPRw05Y8wyu3wZ6r0N+mSgL7HQUW3+q5k1xELNgbv4n4lH6vn+vspzvz8dmU8hjXmFtUcX0/NRVoqWjsAAtlpDmCjOwIZU9EwuyqxLsoQsKhSylUkXb7cdANuRFMNaf3jVsByv1hy8gtIDpLZzdj/Pm1A8Lq1m8g3na/V7GgbYi9ja7Jy+NCNCdbDJaS/DBEn3nOTp+Z3Xlo48iKwoCo1Kgn7QoBd9tIJP4XuJY1QplPx/jAnMU65TynsRc2JIgN96C2sub+H+A9I/i34qYV+yV2KzBAyzkA3EhY1ENmawmb5/XLEnEnt/zQ=
+  app: simple-spirit
+  on:
+    repo: jhwheeler/simple-spirit
