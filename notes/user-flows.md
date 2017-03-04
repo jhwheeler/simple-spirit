@@ -1,16 +1,17 @@
 # User Flows for MVP
 
 
-## Daily Aphorism Screen
+## Daily Maxim Screen
 
-1. Click/tap on aphorism
+1. Click/tap on maxim
 
 2. Scroll down
 
 3. Click corner login button
 
 ---
-* 1 & 2 > Tool Screen
+* 1 > External page via link (video, article, etc.)
+* 2 > Tool Screen
 * 3 > Login Screen
 
 
@@ -27,7 +28,7 @@
 
 ---
 * 1 & 2 > Experience Recording Screen
-* 3 > Daily Aphorism Screen
+* 3 > Daily Maxim Screen
 * 4 > Login Screen
 
 
