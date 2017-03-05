@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
             <div className="main">
                 <Header/>
-                <Maxim content="You are the Universe"/>
+                <Maxim content="Silence can be heard in every sound. All you need is to listen." />
                 <Prompt/>
                 <Menu/>
             </div>

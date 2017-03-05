@@ -4,7 +4,7 @@ class Hamburger extends React.Component {
     render() {
         return(
             <div className="hamburger">
-                <p>Login</p>
+                <p>Menu</p>
             </div>
         );
     }
