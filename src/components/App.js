@@ -1,10 +1,11 @@
 import React from 'react';
+import Maxim from './Maxim';
 
 class App extends React.Component {
     render() {
-        return(
+        return (
             <div className="header">
-                <h1>Hello, Spirit!</h1>
+                <Maxim content="You are the Universe"/>
             </div>
         );
     }
