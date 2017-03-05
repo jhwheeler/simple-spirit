@@ -1,11 +1,17 @@
 import React from 'react';
+import Header from './Header';
 import Maxim from './Maxim';
+import Prompt from './Prompt';
+import Menu from './Menu';
 
 class App extends React.Component {
     render() {
         return (
-            <div className="header">
+            <div className="main">
+                <Header/>
                 <Maxim content="You are the Universe"/>
+                <Prompt/>
+                <Menu/>
             </div>
         );
     }
