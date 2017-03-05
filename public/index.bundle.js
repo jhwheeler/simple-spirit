@@ -9447,6 +9447,7 @@ module.exports = ReactPropTypesSecret;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Maxim__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Prompt__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Menu__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ContentContainer__ = __webpack_require__(191);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9461,13 +9462,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
     function App() {
         _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
     }
 
     _createClass(App, [{
@@ -9477,8 +9479,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'main' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Header__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Maxim__["a" /* default */], { content: 'Silence can be heard in every sound. All you need is to listen.' }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Prompt__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ContentContainer__["a" /* default */], null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Menu__["a" /* default */], null)
             );
         }
@@ -9627,7 +9628,7 @@ var Maxim = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "p",
                     null,
-                    this.props.content
+                    this.props.quote
                 )
             );
         }
@@ -9718,7 +9719,7 @@ var Prompt = function (_React$Component) {
                 "div",
                 { className: "prompt" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "p",
+                    "button",
                     null,
                     "make it real"
                 ),
@@ -22377,6 +22378,130 @@ exports.push([module.i, "* {\n    box-sizing: border-box;\n    font-family: 'Ral
 
 // exports
 
+
+/***/ }),
+/* 191 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Maxim__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Challenge__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Prompt__ = __webpack_require__(87);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var ContentContainer = function (_React$Component) {
+    _inherits(ContentContainer, _React$Component);
+
+    function ContentContainer() {
+        _classCallCheck(this, ContentContainer);
+
+        var _this = _possibleConstructorReturn(this, (ContentContainer.__proto__ || Object.getPrototypeOf(ContentContainer)).call(this));
+
+        _this.changeContent = _this.changeContent.bind(_this);
+        _this.state = {
+            content: "maxim"
+        };
+        return _this;
+    }
+
+    _createClass(ContentContainer, [{
+        key: 'changeContent',
+        value: function changeContent(e) {
+            event.preventDefault();
+            console.log("Clicked");
+            //if (this.state.content == "maxim") {
+            this.setState({ content: "challenge" });
+            //} else {
+            //   this.setState({ content: "maxim" })
+            //}
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var content = this.state.content;
+            var renderedContent = null;
+
+            if (content = "maxim") {
+                renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Maxim__["a" /* default */], { quote: 'Silence can be heard in every sound. All you need is to listen.' });
+            } else if (content = "challenge") {
+                renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Challenge__["a" /* default */], { content: 'The trick to presence is to listen to the space between the sounds.Unfocus your eyes for a second so the letters go blurry and the space between the words pops out.Relax your vision and allow the surrounding space to embrace these words...' });
+            }
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'content-container' },
+                renderedContent,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Prompt__["a" /* default */], { onClick: function onClick(e) {
+                        return _this2.changeContent(e);
+                    } })
+            );
+        }
+    }]);
+
+    return ContentContainer;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = ContentContainer;
+
+/***/ }),
+/* 192 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Challenge = function (_React$Component) {
+    _inherits(Challenge, _React$Component);
+
+    function Challenge() {
+        _classCallCheck(this, Challenge);
+
+        return _possibleConstructorReturn(this, (Challenge.__proto__ || Object.getPrototypeOf(Challenge)).apply(this, arguments));
+    }
+
+    _createClass(Challenge, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "challenge" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "p",
+                    null,
+                    this.props.content
+                )
+            );
+        }
+    }]);
+
+    return Challenge;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = Challenge;
 
 /***/ })
 /******/ ]);

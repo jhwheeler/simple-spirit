@@ -3,14 +3,18 @@ import Header from './Header';
 import Maxim from './Maxim';
 import Prompt from './Prompt';
 import Menu from './Menu';
+import ContentContainer from './ContentContainer';
 
 class App extends React.Component {
+    constructor() {
+        super();
+    }
+
     render() {
         return (
             <div className="main">
                 <Header/>
-                <Maxim content="Silence can be heard in every sound. All you need is to listen." />
-                <Prompt/>
+                <ContentContainer/>
                 <Menu/>
             </div>
         );

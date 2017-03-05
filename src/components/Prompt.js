@@ -4,7 +4,7 @@ class Prompt extends React.Component {
     render() {
         return(
             <div className="prompt">
-                <p>make it real</p>
+                <button>make it real</button>
                 <div className="arrow"></div>
             </div>
         );
