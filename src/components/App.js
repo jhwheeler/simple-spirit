@@ -6,10 +6,6 @@ import Menu from './Menu';
 import ContentContainer from './ContentContainer';
 
 class App extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div className="main">

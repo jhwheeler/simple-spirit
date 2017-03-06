@@ -12,29 +12,24 @@ class ContentContainer extends React.Component {
         }
     }
 
-    changeContent(e) {
-        event.preventDefault();
-        console.log("Clicked");
-        //if (this.state.content == "maxim") {
-            this.setState({ content: "challenge" })
-        //} else {
-         //   this.setState({ content: "maxim" })
-        //}
+    changeContent(event) {
+        console.log(this);
+        let content = this.state.content;
+        this.setState({ content: content == "challenge" ? "maxim" : "challenge"})
     }
 
     render() {
-        let content = this.state.content;
         let renderedContent = null;
 
-        if (content = "maxim") {
+        if (this.state.content == "challenge") {
+            renderedContent = <Challenge content="The trick to presence is to listen to the space between the sounds." />;
+        } else {
             renderedContent = <Maxim quote="Silence can be heard in every sound. All you need is to listen." />;
-        } else if (content = "challenge") {
-            renderedContent = <Challenge content="The trick to presence is to listen to the space between the sounds.Unfocus your eyes for a second so the letters go blurry and the space between the words pops out.Relax your vision and allow the surrounding space to embrace these words..."/>;
         }
             return (
                 <div className="content-container">
                     {renderedContent}
-                    <Prompt onClick={(e) => this.changeContent(e)}/>
+                    <Prompt onClick={this.changeContent}/>
                 </div>
             );
     }

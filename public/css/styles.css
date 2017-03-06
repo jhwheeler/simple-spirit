@@ -21,7 +21,7 @@ p {
     padding: 30px;
 }
 
-.maxim {
+.maxim, .challenge {
     font-size: 20px;
     text-align: center;
     padding: 40px;
@@ -30,6 +30,15 @@ p {
 .prompt {
     text-align: center;
     padding: 10px;
+}
+
+.prompt-button {
+    border: none;
+    background-color: transparent;
+}
+
+.prompt-button:hover {
+    cursor: pointer;
 }
 
 .menu {
