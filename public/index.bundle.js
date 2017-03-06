@@ -6811,7 +6811,7 @@ var Prompt = function (_React$Component) {
                     { className: "prompt-button", onClick: function onClick() {
                             return _this2.props.onClick();
                         } },
-                    "make it real"
+                    this.props.prompt
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "arrow" })
             );
@@ -9700,7 +9700,8 @@ var ContentContainer = function (_React$Component) {
 
         _this.changeContent = _this.changeContent.bind(_this);
         _this.state = {
-            content: "maxim"
+            content: "maxim",
+            prompt: "make it real"
         };
         return _this;
     }
@@ -9708,15 +9709,15 @@ var ContentContainer = function (_React$Component) {
     _createClass(ContentContainer, [{
         key: 'changeContent',
         value: function changeContent(event) {
-            console.log(this);
             var content = this.state.content;
+            var prompt = this.state.prompt;
             this.setState({ content: content == "challenge" ? "maxim" : "challenge" });
+            this.setState({ prompt: content == "maxim" ? "back" : "make it real" });
         }
     }, {
         key: 'render',
         value: function render() {
             var renderedContent = null;
-
             if (this.state.content == "challenge") {
                 renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Challenge__["a" /* default */], { content: 'The trick to presence is to listen to the space between the sounds.' });
             } else {
@@ -9726,7 +9727,7 @@ var ContentContainer = function (_React$Component) {
                 'div',
                 { className: 'content-container' },
                 renderedContent,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Prompt__["a" /* default */], { onClick: this.changeContent })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Prompt__["a" /* default */], { prompt: this.state.prompt, onClick: this.changeContent })
             );
         }
     }]);
