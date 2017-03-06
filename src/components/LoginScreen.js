@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from './Header';
 import Menu from './Menu';
-import ContentContainer from './ContentContainer';
+import LoginForm from './LoginForm';
 
-class App extends React.Component {
+class LoginScreen extends React.Component {
     render() {
         return (
             <div className="main">
                 <Header/>
-                <ContentContainer/>
+                <LoginForm/>
                 <Menu/>
             </div>
         );
     }
 }
 
-export default App;
+export default LoginScreen;

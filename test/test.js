@@ -7,7 +7,7 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('Maxims', function() {
+describe('App', function() {
     it('should start server', function() {
         return chai.request(app)
             .get('/')
