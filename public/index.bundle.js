@@ -9541,10 +9541,9 @@ module.exports = ReactPropTypesSecret;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Maxim__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Prompt__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Menu__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ContentContainer__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Menu__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ContentContainer__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LoginForm__ = __webpack_require__(191);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9552,7 +9551,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -9576,8 +9574,8 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'main' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Header__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__ContentContainer__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Menu__["a" /* default */], null)
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__ContentContainer__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Menu__["a" /* default */], null)
             );
         }
     }]);
@@ -9932,7 +9930,7 @@ exports = module.exports = __webpack_require__(92)();
 
 
 // module
-exports.push([module.i, "* {\n    box-sizing: border-box;\n    font-family: 'Raleway', sans-serif;\n}\n\nbody {\n    margin: 0;\n}\n\nh1 {\n    font-size: 42px;\n    font-weight: 100;\n    text-align: center;\n}\n\np {\n    margin: 0;\n}\n\n.header {\n    padding: 30px;\n}\n\n.maxim, .challenge {\n    font-size: 20px;\n    text-align: center;\n    padding: 40px;\n}\n\n.prompt {\n    text-align: center;\n    padding: 10px;\n}\n\n.prompt-button {\n    border: none;\n    background-color: transparent;\n}\n\n.prompt-button:hover {\n    cursor: pointer;\n}\n\n.menu {\n    position: fixed;\n    bottom: 0;\n    padding-top: 20px;\n    padding-bottom: 20px;\n    margin: 0 auto;\n    height: 60px;\n    width: 100%;\n    color: #fff;\n    background-color: #000;\n}\n\n.share {\n    float: left;\n    padding-left: 20px;\n    display: inline-block;\n}\n\n.hamburger {\n    float: right;\n    padding-right: 20px;\n    display: inline-block;\n}\n", ""]);
+exports.push([module.i, "* {\n    box-sizing: border-box;\n    font-family: 'Raleway', sans-serif;\n}\n\nbody {\n    margin: 0;\n}\n\nh1 {\n    font-size: 42px;\n    font-weight: 100;\n    text-align: center;\n}\n\np {\n    margin: 0;\n}\n\n.header {\n    padding: 30px;\n}\n\n.maxim, .challenge {\n    font-size: 20px;\n    text-align: center;\n    padding: 40px;\n}\n\n.prompt {\n    text-align: center;\n    padding: 10px;\n}\n\n.prompt-button {\n    border: none;\n    background-color: transparent;\n}\n\n.prompt-button:hover {\n    cursor: pointer;\n}\n\n.login {\n    text-align: center;\n}\n\nfieldset {\n    border: 0;\n    margin: 0px;\n    padding: 0px;\n}\n\n.user-input, .pass-input {\n    width: 180px;\n    height: 40px;\n    padding: 10px;\n    margin: 0px;\n}\n\n.login-button {\n    width: 180px;\n    height: 40px;\n    background-color: #1e1e1e;\n    color: #fff;\n    font-size: 14px;\n    border: none;\n    margin: 20px;\n}\n\n.menu {\n    position: fixed;\n    bottom: 0;\n    padding-top: 20px;\n    padding-bottom: 20px;\n    margin: 0 auto;\n    height: 60px;\n    width: 100%;\n    color: #fff;\n    background-color: #1e1e1e;\n}\n\n.share {\n    float: left;\n    padding-left: 20px;\n    display: inline-block;\n}\n\n.hamburger {\n    float: right;\n    padding-right: 20px;\n    display: inline-block;\n}\n\n/* Utility classes */\n.visually-hidden {\n    border: 0 !important;\n    clip: rect(0 0 0 0) !important;\n    height: 1px !important;\n    margin: -1px !important;\n    overflow: hidden !important;\n    padding: 0 !important;\n    position: absolute !important;\n    width: 1px !important;\n}\n", ""]);
 
 // exports
 
@@ -22495,6 +22493,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_App__["a" /* default */], null), document.querySelector("#main"));
+
+/***/ }),
+/* 191 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var LoginForm = function (_React$Component) {
+    _inherits(LoginForm, _React$Component);
+
+    function LoginForm() {
+        _classCallCheck(this, LoginForm);
+
+        return _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).apply(this, arguments));
+    }
+
+    _createClass(LoginForm, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "form",
+                { className: "login" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "fieldset",
+                    { name: "login-info" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "label",
+                        { htmlFor: "user", className: "visually-hidden" },
+                        "User"
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "user-input", type: "text", name: "user", placeholder: "user", id: "user" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "label",
+                        { htmlFor: "password", className: "visually-hidden" },
+                        "Password"
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "pass-input", type: "password", name: "password", placeholder: "pass", id: "password" })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "button",
+                    { type: "submit", className: "login-button" },
+                    "open"
+                )
+            );
+        }
+    }]);
+
+    return LoginForm;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* unused harmony default export */ var _unused_webpack_default_export = LoginForm;
 
 /***/ })
 /******/ ]);

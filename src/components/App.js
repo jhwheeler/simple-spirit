@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import Maxim from './Maxim';
-import Prompt from './Prompt';
 import Menu from './Menu';
 import ContentContainer from './ContentContainer';
+import LoginForm from './LoginForm';
 
 class App extends React.Component {
     render() {
