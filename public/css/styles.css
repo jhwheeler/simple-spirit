@@ -86,10 +86,25 @@ fieldset {
     display: inline-block;
 }
 
+.share img {
+    height: 29px;
+    width: 27px;
+}
+
 .hamburger {
     float: right;
     padding-right: 20px;
     display: inline-block;
+}
+
+.hamburger img {
+    height: 30px;
+    width: 45px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #fff;
 }
 
 /* Utility classes */

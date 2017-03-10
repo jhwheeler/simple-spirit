@@ -11,8 +11,8 @@ const Root = () => {
     return (
         <Router>
             <Switch>
-                <Route exact pattern="/" component={App}/>
-                <Route exact pattern="/login" component={LoginScreen} />
+                <Route exact path="/" component={App}/>
+                <Route path="/login" component={LoginScreen} />
             </Switch>
         </Router>
     )

@@ -16,10 +16,16 @@ module.exports = {
             },
             {
                 test: /\.css$/,
+                exclude: /node_modules/,
                 use: [
                     { loader: 'style-loader'},
                     { loader: 'css-loader' }
                 ]
+            },
+            {
+                test: /.(png|jpg|svg)$/,
+                exclude: /node_modules/,
+                use: { loader: 'url-loader?limit=8192' }
             }
         ]
     }

@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import shareIcon from '../../public/images/share.png';
 
 class Share extends React.Component {
     render() {
         return(
             <div className="share">
-                <p>Share</p>
+            <Link to="/" className="share-icon"><img src={shareIcon} /></Link>
             </div>
         );
     }

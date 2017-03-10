@@ -4,11 +4,21 @@ import Menu from './Menu';
 import ContentContainer from './ContentContainer';
 
 class App extends React.Component {
+    constructor() {
+        super();
+        this.setHeaderImage = this.setHeaderImage.bind(this);
+        this.state = {
+            logoType: "logo"
+        }
+    }
+    setHeaderImage(type) {
+        this.setState({ logoType: type })
+    }
     render() {
         return (
             <div className="main">
-                <Header/>
-                <ContentContainer/>
+                <Header logoType={this.state.logoType}/>
+                <ContentContainer setHeader={(type) => this.setHeaderImage()}/>
                 <Menu/>
             </div>
         );
