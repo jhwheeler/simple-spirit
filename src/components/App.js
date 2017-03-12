@@ -12,7 +12,9 @@ class App extends React.Component {
         }
     }
     setHeaderImage(type) {
-        this.setState({ logoType: type })
+        if (this.state.logoType !== type) {
+            this.setState({ logoType: type });
+        }
     }
     render() {
         return (
