@@ -21,6 +21,12 @@ p {
     padding: 30px;
 }
 
+.header img {
+    display: block;
+    margin: auto;
+    height: 100px;
+}
+
 .maxim, .challenge {
     font-size: 20px;
     text-align: center;
@@ -35,14 +41,29 @@ p {
 .prompt-button {
     border: none;
     background-color: transparent;
+    font-size: 14px;
 }
 
 .prompt-button:hover {
     cursor: pointer;
 }
 
+.challenge {
+    margin: 0px 200px;
+    line-height: 30px;
+}
+
+.experience-recording {
+    margin: 40px 0px;
+}
+
 .login {
     text-align: center;
+}
+
+textarea {
+    height: 250px;
+    width: 600px;
 }
 
 fieldset {
@@ -118,3 +139,4 @@ fieldset {
     position: absolute !important;
     width: 1px !important;
 }
+
