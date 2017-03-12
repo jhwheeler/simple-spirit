@@ -23,7 +23,7 @@ class ContentContainer extends React.Component {
     render() {
         let renderedContent = null;
         if (this.state.content == "challenge") {
-            renderedContent = <Challenge content="The trick to presence is to listen to the space between the sounds." />;
+            renderedContent = <Challenge content="The trick to presence is to listen to the space between the sounds. Read this slowly... Take a second to look at the space between the words. Unfocus your eyes, let the shapes blur together, and see the surrounding space embracing these words." />;
             this.props.setHeader("challenge");
         } else {
             renderedContent = <Maxim quote="Silence can be heard in every sound. All you need is to listen." />;
