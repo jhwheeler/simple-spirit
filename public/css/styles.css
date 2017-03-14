@@ -5,6 +5,8 @@
 
 body {
     margin: 0;
+    background-image: url('/images/texture.jpg');
+    background-repeat: repeat;
 }
 
 h1 {
@@ -31,6 +33,7 @@ p {
     font-size: 20px;
     text-align: center;
     padding: 40px;
+    color: #292526;
 }
 
 .prompt {
@@ -46,6 +49,13 @@ p {
 
 .prompt-button:hover {
     cursor: pointer;
+}
+
+.arrow {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 30px;
 }
 
 .challenge {
