@@ -75,16 +75,17 @@ app.put('/maxims/:maximId', (req, res) => {
   });
 
   Maxim
-    .findByIdAndUpdate(req.params.maximId, {$set: toUpdate})
+    .findOneAndUpdate({maximId: req.params.maximId}, {$set: toUpdate})
     .exec()
-    .then(data => res.status(204).end())
+    .then(data => res.status(200).json(data))
     .catch(err => res.status(500).json(err));
 });
 
 app.delete('/maxim/:maximId', (req, res) => {
   Maxim
-    .findByIdAndRemove(req.params.maximId)
+    .findOneAndRemove({maximId: req.params.maximId})
     .exec()
+    .then(data => res.status(202).end())
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
