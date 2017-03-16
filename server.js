@@ -16,10 +16,9 @@ app.get('/login', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
 
 app.get('/maxims', (req, res) => {
- let rand = Math.floor(Math.random() * 3);
   Maxim
-    .findOne()
-    .skip(rand)
+    .find()
+    .sort({maximId: -1})
     .exec()
     .then(data => res.json(data))
     .catch(
@@ -29,7 +28,19 @@ app.get('/maxims', (req, res) => {
     });
 })
 
-app.post('/maxims', (req, res) => {
+app.get('/maxim/:maximId', (req, res) => {
+  Maxim
+    .findOne({maximId: req.params.maximId})
+    .exec()
+    .then(data => res.json(data))
+    .catch(
+      err => {
+        console.error(err);
+        res.status(500).json({message: 'Internal Server Error'})
+    });
+})
+
+app.post('/maxim', (req, res) => {
 
   const requiredFields = ['maximId', 'maxim', 'challenge', 'date'];
   for (let i=0; i<requiredFields.length; i++) {
@@ -56,7 +67,7 @@ app.post('/maxims', (req, res) => {
     });
 });
 
-app.put('/maxims/:maximId', (req, res) => {
+app.put('/maxim/:maximId', (req, res) => {
   if (!(req.params.maximId && req.body.maximId && parseInt(req.params.maximId) === req.body.maximId)) {
     const message = (
       `Request path id (${req.params.maximId}) and request body id ` +
@@ -81,11 +92,11 @@ app.put('/maxims/:maximId', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-app.delete('/maxims/:maximId', (req, res) => {
+app.delete('/maxim/:maximId', (req, res) => {
   Maxim
     .findOneAndRemove({maximId: req.params.maximId})
     .exec()
-    .then(data => res.status(202)json(data))
+    .then(data => res.status(202).json(data))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
