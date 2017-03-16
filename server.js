@@ -81,11 +81,11 @@ app.put('/maxims/:maximId', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-app.delete('/maxim/:maximId', (req, res) => {
+app.delete('/maxims/:maximId', (req, res) => {
   Maxim
     .findOneAndRemove({maximId: req.params.maximId})
     .exec()
-    .then(data => res.status(202).end())
+    .then(data => res.status(202)json(data))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
