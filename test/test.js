@@ -16,13 +16,13 @@ function seedMaxims() {
   const seedData = [];
 
   for (let i=1; i<=10; i++) {
-    seedData.push(generateMaxims());
+    seedData.push(generateMaxim());
   }
 
   return Maxim.insertMany(seedData);
 }
 
-function generateMaxims() {
+function generateMaxim() {
   return {
     maximId: faker.random.number(),
     maxim: faker.lorem.words(),
@@ -69,10 +69,36 @@ describe('API calls', function() {
       return chai.request(app)
         .get('/maxims')
         .then(function(res) {
-          console.log(res.body);
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
-        })
+        });
+    });
+  });
+
+  describe('POST endpoint', function() {
+
+    it('should POST a maxim', function() {
+      const newMaxim = generateMaxim();
+      return chai.request(app)
+        .post('/maxim')
+        .send(newMaxim)
+        .then(function(res) {
+          console.log(res.body);
+          res.should.have.status(201);
+          res.should.be.json;
+          res.body.should.be.an('object');
+          res.body.should.include.keys(
+              'maximId', 'maxim', 'challenge', 'date');
+          res.body.maxim.should.equal(newMaxim.maxim);
+          res.body.maximId.should.not.be.null;
+          res.body.challenge.should.equal(newMaxim.challenge);
+
+          return Maxim.findOne({maximId: res.body.maximId});
+      })
+      .then(function(post) {
+          maxim.maxim.should.equal(newMaxim.title);
+          maxim.challenge.should.equal(newMaxim.challenge);
+      });
     });
   });
 });
