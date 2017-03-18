@@ -65,26 +65,39 @@ describe('API calls', function() {
 
   describe('GET endpoint', function() {
 
-    it('should GET all maxims', function() {
+    it('should get all maxims', function() {
       return chai.request(app)
         .get('/maxims')
         .then(function(res) {
+          console.log(res.body)
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
         });
     });
+
+    it('should get a maxim by id', function() {
+      const randomMaxim = Maxim.findOne();
+      const randId = randomMaxim.maximId;
+      return chai.request(app)
+        .get(`/maxim/${randId}`)
+        .then(function(res) {
+          console.log(res.body);
+          res.should.have.status(200);
+          res.body.should.have.length.of.at.least(1);
+        })
+    })
   });
 
   describe('POST endpoint', function() {
 
-    it('should POST a maxim', function() {
+    it('should post a maxim', function() {
       const newMaxim = generateMaxim();
       return chai.request(app)
         .post('/maxim')
         .send(newMaxim)
         .then(function(res) {
           console.log(res.body);
-          res.should.have.status(201);
+          res.should.have.status(200);
           res.should.be.json;
           res.body.should.be.an('object');
           res.body.should.include.keys(
@@ -96,9 +109,61 @@ describe('API calls', function() {
           return Maxim.findOne({maximId: res.body.maximId});
       })
       .then(function(maxim) {
-          maxim.maxim.should.equal(newMaxim.title);
+          maxim.maxim.should.equal(newMaxim.maxim);
           maxim.challenge.should.equal(newMaxim.challenge);
       });
+    });
+  });
+
+  describe('PUT endpoint', function() {
+
+    it('should update fields you send', function() {
+      const updateData = {
+        maxim: 'The best maxim ever',
+        challenge: 'Make it happen. You can do it!'
+      };
+
+      return Maxim
+        .findOne()
+        .exec()
+        .then(function(maxim) {
+          updateData.maximId = maxim.maximId;
+
+          return chai.request(app)
+            .put(`/maxim/${maxim.maximId}`)
+            .send(updateData);
+        })
+        .then(function(res) {
+          res.should.have.status(200);
+
+          return Maxim.findOne({maximId: updateData.maximId}).exec();
+        })
+        .then(function(maxim) {
+          maxim.maxim.should.equal(updateData.maxim);
+          maxim.challenge.should.equal(updateData.challenge);
+        });
+    })
+  })
+
+  describe('DELETE endpoint', function() {
+
+    it('should delete selected maxim', function() {
+      let maxim;
+
+      return Maxim
+        .findOne()
+        .exec()
+        .then(function(_maxim) {
+          maxim = _maxim;
+          return chai.request(app).delete(`/maxim/${maxim.maximId}`);
+        })
+        .then(function(res) {
+          res.should.have.status(204);
+          return Post.findOne({maximId: maxim.maximId}).exec();
+        })
+        .then(function(_maxim) {
+          should.not.exist(_maxim)
+        });
     });
   });
 });
