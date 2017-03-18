@@ -95,7 +95,7 @@ describe('API calls', function() {
 
           return Maxim.findOne({maximId: res.body.maximId});
       })
-      .then(function(post) {
+      .then(function(maxim) {
           maxim.maxim.should.equal(newMaxim.title);
           maxim.challenge.should.equal(newMaxim.challenge);
       });
