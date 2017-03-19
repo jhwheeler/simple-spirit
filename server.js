@@ -25,20 +25,35 @@ app.get('/maxims', (req, res) => {
       err => {
         console.error(err);
         res.status(500).json({message: 'Internal Server Error'})
-    });
-})
+      }
+    );
+});
 
-app.get('/maxim/:maximId', (req, res) => {
-  Maxim
-    .findOne({maximId: req.params.maximId})
-    .exec()
-    .then(data => res.json(data))
-    .catch(
-      err => {
-        console.error(err);
-        res.status(500).json({message: 'Internal Server Error'})
-    });
-})
+app.get('/maxim/:maximId?', (req, res) => {
+  if (req.params.maximId === undefined) {
+    Maxim
+      .find()
+      .sort({maximId: -1})
+      .limit(1)
+      .exec()
+      .then(data => res.json(data))
+      .catch(err => {
+          console.error(err);
+          res.status(500).json({message: 'Internal Server Error'})
+      });
+  } else {
+    Maxim
+      .findOne({maximId: req.params.maximId})
+      .exec()
+      .then(data => res.json(data))
+      .catch(
+        err => {
+          console.error(err);
+          res.status(500).json({message: 'Internal Server Error'})
+        }
+      );
+  }
+});
 
 
 app.post('/maxim', (req, res) => {

@@ -2,6 +2,7 @@ import React from 'react';
 import Maxim from './Maxim';
 import Challenge from './Challenge';
 import Prompt from './Prompt';
+import api from '../api';
 
 class ContentContainer extends React.Component {
     constructor() {
@@ -9,7 +10,8 @@ class ContentContainer extends React.Component {
         this.changeContent = this.changeContent.bind(this);
         this.state = {
             content: "maxim",
-            prompt: "make it real"
+            prompt: "make it real",
+            maxim: {}
         }
     }
 
@@ -20,12 +22,18 @@ class ContentContainer extends React.Component {
         this.setState({ prompt: content == "maxim" ? "back" : "make it real"})
     }
 
+    componentDidMount() {
+      api.getLatestMaxim().end((error, res) => {
+        this.setState({maxim: res.body[0]})
+      });
+    }
+
     render() {
         let renderedContent = null;
         if (this.state.content == "challenge") {
-            renderedContent = <Challenge content="The trick to presence is to listen to the space between the sounds. Read this slowly... Take a second to look at the space between the words. Unfocus your eyes, let the shapes blur together, and see the surrounding space embracing these words." />;
+            renderedContent = <Challenge content={this.state.maxim.challenge}/>;
         } else {
-            renderedContent = <Maxim quote="Silence can be heard in every sound. All you need is to listen." />;
+            renderedContent = <Maxim quote={this.state.maxim.maxim}/>;
         }
             return (
                 <div className="content-container">
