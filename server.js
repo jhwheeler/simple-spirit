@@ -97,7 +97,7 @@ app.delete('/maxim/:maximId', (req, res) => {
   Maxim
     .findOneAndRemove({maximId: req.params.maximId})
     .exec()
-    .then(data => res.status(202).json(data))
+    .then(data => res.status(204).json(data))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 

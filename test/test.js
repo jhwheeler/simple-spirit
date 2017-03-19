@@ -69,23 +69,25 @@ describe('API calls', function() {
       return chai.request(app)
         .get('/maxims')
         .then(function(res) {
-          console.log(res.body)
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
         });
     });
 
     it('should get a maxim by id', function() {
-      const randomMaxim = Maxim.findOne();
-      const randId = randomMaxim.maximId;
-      return chai.request(app)
-        .get(`/maxim/${randId}`)
-        .then(function(res) {
-          console.log(res.body);
-          res.should.have.status(200);
-          res.body.should.have.length.of.at.least(1);
-        })
-    })
+      Maxim
+        .findOne()
+        .exec()
+        .then((randomMaxim) => {
+          const randId = randomMaxim.maximId;
+          return chai.request(app)
+            .get(`/maxim/${randId}`)
+            .then(function(res) {
+              res.should.have.status(200);
+              res.body.should.have.length.of.at.least(1);
+            });
+        });
+    });
   });
 
   describe('POST endpoint', function() {
@@ -96,7 +98,6 @@ describe('API calls', function() {
         .post('/maxim')
         .send(newMaxim)
         .then(function(res) {
-          console.log(res.body);
           res.should.have.status(200);
           res.should.be.json;
           res.body.should.be.an('object');
@@ -159,7 +160,7 @@ describe('API calls', function() {
         })
         .then(function(res) {
           res.should.have.status(204);
-          return Post.findOne({maximId: maxim.maximId}).exec();
+          return Maxim.findOne({maximId: maxim.maximId}).exec();
         })
         .then(function(_maxim) {
           should.not.exist(_maxim)
