@@ -61,13 +61,22 @@ describe('API calls', function() {
 
     after(function() {
         return closeServer();
-    })
+    });
 
   describe('GET endpoint', function() {
 
     it('should get all maxims', function() {
       return chai.request(app)
         .get('/maxims')
+        .then(function(res) {
+          res.should.have.status(200);
+          res.body.should.have.length.of.at.least(1);
+        });
+    });
+
+    it('should get latest maxim', function() {
+      return chai.request(app)
+        .get('/maxim')
         .then(function(res) {
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
