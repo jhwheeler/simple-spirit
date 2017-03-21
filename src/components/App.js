@@ -5,10 +5,17 @@ import ContentContainer from './ContentContainer';
 
 class App extends React.Component {
   render() {
+
+  let maximId;
+
+  if (this.props.match && this.props.match.params) {
+    maximId = this.props.match.params.maximId;
+  }
+
     return (
       <div className="main">
         <Header/>
-        <ContentContainer/>
+        <ContentContainer maximId={maximId}/>
         <Menu/>
       </div>
     );

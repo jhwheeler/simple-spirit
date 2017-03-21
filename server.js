@@ -12,10 +12,11 @@ const {PORT, DATABASE_URL} = require('./config');
 const {Maxim} = require('./models');
 
 app.use(express.static('public'));
-app.get('/login', (req, res) => {
+
+app.get(['/login', '/archive', '/maxim/:maximId'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
 
-app.get('/maxims', (req, res) => {
+app.get('/api/maxims', (req, res) => {
   Maxim
     .find()
     .sort({maximId: -1})
@@ -29,7 +30,7 @@ app.get('/maxims', (req, res) => {
     );
 });
 
-app.get('/maxim/:maximId?', (req, res) => {
+app.get('/api/maxim/:maximId?', (req, res) => {
   if (req.params.maximId === undefined) {
     Maxim
       .find()
@@ -55,10 +56,9 @@ app.get('/maxim/:maximId?', (req, res) => {
   }
 });
 
+app.post('/api/maxim', (req, res) => {
 
-app.post('/maxim', (req, res) => {
-
-  const requiredFields = ['maximId', 'maxim', 'challenge', 'date'];
+  const requiredFields = ['maximId', 'maxim', 'challenge'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -75,7 +75,8 @@ app.post('/maxim', (req, res) => {
       maximId: req.body.maximId,
       maxim: req.body.maxim,
       challenge: req.body.challenge,
-      date: date})
+      date: date
+    })
     .then(data => res.status(200).json(data))
     .catch(err => {
       console.error(err);
@@ -83,7 +84,7 @@ app.post('/maxim', (req, res) => {
     });
 });
 
-app.put('/maxim/:maximId', (req, res) => {
+app.put('/api/maxim/:maximId', (req, res) => {
   if (!(req.params.maximId && req.body.maximId && parseInt(req.params.maximId) === req.body.maximId)) {
     const message = (
       `Request path id (${req.params.maximId}) and request body id ` +
@@ -108,7 +109,7 @@ app.put('/maxim/:maximId', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
-app.delete('/maxim/:maximId', (req, res) => {
+app.delete('/api/maxim/:maximId', (req, res) => {
   Maxim
     .findOneAndRemove({maximId: req.params.maximId})
     .exec()

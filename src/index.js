@@ -6,13 +6,16 @@ import css from '../public/css/styles.css';
 
 import App from './components/App';
 import LoginScreen from './components/LoginScreen';
+import Archive from './components/Archive';
 
 const Root = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={App}/>
+        <Route exact path="/" component={App} />
         <Route path="/login" component={LoginScreen} />
+        <Route path="/archive" component={Archive} />
+        <Route path="/maxim/:maximId" component={App} />
       </Switch>
     </Router>
   )

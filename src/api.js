@@ -2,11 +2,15 @@ import superagent from 'superagent';
 
 const api = {
   getMaxims: () => {
-    return superagent.get('/maxims');
+    return superagent.get('/api/maxims');
+  },
+
+  getMaximById: (maximId) => {
+    return superagent.get(`/api/maxim/${maximId}`);
   },
 
   getLatestMaxim: () => {
-    return superagent.get('/maxim');
+    return superagent.get('/api/maxim');
   }
 }
 

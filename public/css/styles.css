@@ -67,6 +67,10 @@ p {
   margin: 40px 0px;
 }
 
+.archive-item .maxim p {
+  text-align: left;
+}
+
 .login {
   text-align: center;
 }
