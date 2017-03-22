@@ -30,6 +30,7 @@
 .col-11,
 .col-12 {
   float: left;
+  display: inline-block;
 }
 
 /* Mobile default */

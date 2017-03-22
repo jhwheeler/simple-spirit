@@ -14,7 +14,7 @@ const ArchiveItem = (props) => {
       <div className="archive-number">
         {props.maxim.maximId}.
       </div>
-      <Link to={archiveLink} className="archive-link">
+      <Link to={archiveLink} className="archive-link-container">
         <Maxim quote={props.maxim.maxim} />
       </Link>
       {/*

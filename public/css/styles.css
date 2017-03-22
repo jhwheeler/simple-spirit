@@ -67,7 +67,7 @@ p {
   margin: 40px 0px;
 }
 
-.archive-link {
+.archive-link-container {
   text-decoration: none;
 }
 
@@ -129,12 +129,6 @@ fieldset {
   background-color: #1e1e1e;
 }
 
-.share {
-  float: left;
-  padding-left: 20px;
-  display: inline-block;
-}
-
 .share img {
   height: 29px;
   width: 27px;
@@ -151,9 +145,10 @@ fieldset {
   width: 45px;
 }
 
-.menu-link {
+.share-link, .archive-link, .login-link {
   text-decoration: none;
   color: #fff;
+  display: inline-block;
 }
 
 /* Utility classes */
