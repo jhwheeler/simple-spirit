@@ -11,10 +11,17 @@ const ArchiveItem = (props) => {
 
   return (
     <div className="archive-item">
+      <div className="archive-number">
+        {props.maxim.maximId}.
+      </div>
       <Link to={archiveLink} className="archive-link">
-        {/*{props.maxim.maximId}*/}
         <Maxim quote={props.maxim.maxim} />
       </Link>
+      {/*
+      <div className="archive-date">
+        {props.maxim.date}
+      </div>
+      */}
     </div>
   );
 };

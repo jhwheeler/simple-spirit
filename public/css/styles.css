@@ -67,8 +67,22 @@ p {
   margin: 40px 0px;
 }
 
+.archive-link {
+  text-decoration: none;
+}
+
+.archive-number {
+  display: inline-block;
+  position: fixed;
+  margin-left: 10px;
+}
+
 .archive-item .maxim p {
   text-align: left;
+}
+
+.archive-date {
+  margin-left: 10px;
 }
 
 .login {

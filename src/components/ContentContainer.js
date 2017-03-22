@@ -27,7 +27,6 @@ class ContentContainer extends React.Component {
       api.getMaximById(this.props.maximId).end((error, res) => {
         this.setState({maxim: res.body})
       });
-
     } else {
       api.getLatestMaxim().end((error, res) => {
         this.setState({maxim: res.body[0]})
