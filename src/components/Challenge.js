@@ -1,4 +1,5 @@
 import React from 'react';
+import ExperienceRecording from './ExperienceRecording';
 
 class Challenge extends React.Component {
   render() {
@@ -7,6 +8,11 @@ class Challenge extends React.Component {
         <div className="row">
           <div className="col-10 challenge-content">
             <p>{this.props.content}</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-10">
+            <ExperienceRecording/>
           </div>
         </div>
       </div>

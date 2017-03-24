@@ -1,11 +1,11 @@
 import React from 'react';
 
-class ExperienceRecording.js extends React.Component {
+class ExperienceRecording extends React.Component {
   render() {
     return(
       <div className="experience-recording">
         <p>Share your experience...</p>
-        <input type="text-area"></input>
+        <textarea rows="10" cols="50"></textarea>
       </div>
       );
   }
