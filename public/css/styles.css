@@ -64,6 +64,10 @@ p {
   line-height: 30px;
 }
 
+.experience-button {
+  margin: 0 auto;
+}
+
 .experience-recording {
   margin: 40px 0px;
 }

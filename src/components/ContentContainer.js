@@ -18,8 +18,12 @@ class ContentContainer extends React.Component {
   changeContent(event) {
     let content = this.state.content;
     let prompt = this.state.prompt;
-    this.setState({ content: content == "challenge" ? "maxim" : "challenge"})
-    this.setState({ prompt: content == "maxim" ? "back" : "make it real"})
+    this.setState({
+      content: content == "challenge" ? "maxim" : "challenge"
+    });
+    this.setState({
+      prompt: content == "maxim" ? "back" : "make it real"
+    });
   }
 
   componentDidMount() {
