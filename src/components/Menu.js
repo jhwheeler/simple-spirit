@@ -10,10 +10,10 @@ class Menu extends React.Component {
             <Link to="/login" className="login-link">Login</Link>
           </div>
           <div className="col-4 menu-link-div">
-            <Link to="/archive" className="archive-link">Archive</Link>
+            <Link to="/" className="share-link">Share</Link>
           </div>
           <div className="col-4 menu-link-div">
-            <Link to="/" className="share-link">Share</Link>
+            <Link to="/archive" className="archive-link">Archive</Link>
           </div>
         </div>
       </div>
