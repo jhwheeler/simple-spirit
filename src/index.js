@@ -7,6 +7,7 @@ import css from '../public/css/styles.css';
 import App from './components/App';
 import LoginScreen from './components/LoginScreen';
 import Archive from './components/Archive';
+import ConsoleScreen from './components/ConsoleScreen';
 
 const Root = () => {
   return (
@@ -16,6 +17,7 @@ const Root = () => {
         <Route path="/login" component={LoginScreen} />
         <Route path="/archive" component={Archive} />
         <Route path="/maxim/:maximId" component={App} />
+        <Route path="/console" component={ConsoleScreen} />
       </Switch>
     </Router>
   )

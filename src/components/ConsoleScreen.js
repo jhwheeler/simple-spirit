@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from './Header';
+import Console from './Console';
 import Menu from './Menu';
-import LoginForm from './LoginForm';
 
-class LoginScreen extends React.Component {
+class ConsoleScreen extends React.Component {
   render() {
     return (
-      <div className="login-screen">
+      <div className="console-screen">
         <Header/>
-        <LoginForm/>
+        <Console/>
         <Menu/>
       </div>
     );
   }
 }
 
-export default LoginScreen;
+export default ConsoleScreen;

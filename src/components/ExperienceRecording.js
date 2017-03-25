@@ -4,7 +4,7 @@ class ExperienceRecording extends React.Component {
   render() {
     return(
       <div className="experience-recording">
-        <textarea rows="10" cols="50"></textarea>
+        <textarea className="experience-recording-textarea"></textarea>
       </div>
       );
   }

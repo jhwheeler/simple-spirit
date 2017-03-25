@@ -103,9 +103,12 @@ p {
   text-align: center;
 }
 
-textarea {
+.experience-recording-textarea {
   height: 250px;
   width: 600px;
+  margin: 10px 0px;;
+  resize: none;
+  outline: none;
 }
 
 fieldset {
@@ -168,6 +171,37 @@ fieldset {
 
 .menu-link-div {
   text-align: center;
+}
+
+.console .row .col-12 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.console-form {
+  margin: 0 auto;
+}
+
+.console-textarea {
+  height: 80px;
+  width: 600px;
+  margin: 10px 0px;;
+  resize: none;
+  outline: none;
+}
+
+.console-label {
+  display: block;
+  margin-top: 20px;
+}
+
+.console-submit {
+  width: 180px;
+  height: 40px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 14px;
+  border: none;
 }
 
 /* Utility classes */
