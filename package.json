@@ -7,6 +7,7 @@
     "test": "mocha",
     "build": "./node_modules/webpack/bin/webpack.js",
     "start": "nodemon server.js",
+    "build:production": "NODE_ENV=production webpack -p",
     "build-watch": "./node_modules/webpack/bin/webpack.js --watch"
   },
   "repository": {
