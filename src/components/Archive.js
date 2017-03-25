@@ -49,6 +49,7 @@ class Archive extends React.Component {
     return (
       <div className="archive">
         <Header/>
+        <h2 className="archive-header">Archive</h2>
         { archive }
         <Menu/>
       </div>

@@ -68,6 +68,15 @@ p {
   margin: 40px 0px;
 }
 
+.archive-item {
+  padding: 10px 0px;
+}
+
+.archive-header {
+  font-weight: 400;
+  margin-left: 10px;
+}
+
 .archive-link-container {
   text-decoration: none;
 }
