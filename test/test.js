@@ -67,7 +67,7 @@ describe('API calls', function() {
 
     it('should get all maxims', function() {
       return chai.request(app)
-        .get('/maxims')
+        .get('/api/maxims')
         .then(function(res) {
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
@@ -76,7 +76,7 @@ describe('API calls', function() {
 
     it('should get latest maxim', function() {
       return chai.request(app)
-        .get('/maxim')
+        .get('/api/maxim')
         .then(function(res) {
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
@@ -90,7 +90,7 @@ describe('API calls', function() {
         .then((randomMaxim) => {
           const randId = randomMaxim.maximId;
           return chai.request(app)
-            .get(`/maxim/${randId}`)
+            .get(`/api/maxim/${randId}`)
             .then(function(res) {
               res.should.have.status(200);
               res.body.should.have.length.of.at.least(1);
@@ -104,7 +104,7 @@ describe('API calls', function() {
     it('should post a maxim', function() {
       const newMaxim = generateMaxim();
       return chai.request(app)
-        .post('/maxim')
+        .post('/api/maxim')
         .send(newMaxim)
         .then(function(res) {
           res.should.have.status(200);
@@ -140,7 +140,7 @@ describe('API calls', function() {
           updateData.maximId = maxim.maximId;
 
           return chai.request(app)
-            .put(`/maxim/${maxim.maximId}`)
+            .put(`/api/maxim/${maxim.maximId}`)
             .send(updateData);
         })
         .then(function(res) {
@@ -165,7 +165,7 @@ describe('API calls', function() {
         .exec()
         .then(function(_maxim) {
           maxim = _maxim;
-          return chai.request(app).delete(`/maxim/${maxim.maximId}`);
+          return chai.request(app).delete(`/api/maxim/${maxim.maximId}`);
         })
         .then(function(res) {
           res.should.have.status(204);
