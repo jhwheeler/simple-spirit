@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "build": "./node_modules/webpack/bin/webpack.js",
-    "start": "node server.js",
+    "start": "NODE_ENV=production webpack -p && node server.js",
     "build:production": "NODE_ENV=production webpack -p",
     "build-watch": "./node_modules/webpack/bin/webpack.js --watch"
   },
