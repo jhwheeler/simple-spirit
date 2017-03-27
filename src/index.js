@@ -14,12 +14,11 @@ const Root = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={App}>
-          <Route path="/login" component={LoginScreen} />
-          <Route path="/archive" component={Archive} />
-          <Route path="/maxim/:maximId" component={App} />
-          <Route path="/console" component={ConsoleScreen} />
-        </Route>
+        <Route exact path="/" component={App} />
+        <Route path="/login" component={LoginScreen} />
+        <Route path="/archive" component={Archive} />
+        <Route path="/maxim/:maximId" component={App} />
+        <Route path="/console" component={ConsoleScreen} />
       </Switch>
     </Router>
   )
