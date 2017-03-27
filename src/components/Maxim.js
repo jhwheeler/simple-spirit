@@ -5,7 +5,7 @@ class Maxim extends React.Component {
     return(
       <div className="maxim">
         <div className="row">
-          <div className="col-10 maxim-content">
+          <div className="col-8 offset-2 maxim-content">
             <p>{this.props.quote}</p>
           </div>
         </div>

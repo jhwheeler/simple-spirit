@@ -11,6 +11,13 @@ const api = {
 
   getLatestMaxim: () => {
     return superagent.get('/api/maxim');
+  },
+
+  postMaxim: (maxim, challenge) => {
+    const randId = Math.random() * 10;
+    return superagent
+      .post('/api/maxim/')
+      .send({maxim: maxim, challenge: challenge, maximId: randId});
   }
 }
 

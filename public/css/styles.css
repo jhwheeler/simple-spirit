@@ -65,7 +65,8 @@ p {
 }
 
 .experience-button {
-  margin: 0 auto;
+  margin: 20px 0px;
+  text-align: center;
 }
 
 .experience-recording {
@@ -214,81 +215,4 @@ fieldset {
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-}
-
-/* Grid */
-
-* {
-  box-sizing: border-box;
-}
-
-.row {
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-.row::before,
-.row::after {
-  display: table;
-  content: '';
-}
-
-.row::after {
-  clear: both;
-}
-
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-  float: left;
-  display: inline-block;
-}
-
-/* Mobile default */
-.col-4,
-.col-6,
-.col-8,
-.col-12 {
-  width: 100%;
-}
-
-@media only screen and (min-width: 640px) {
-  .row {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .col-4 {
-    width: 33.33333%;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-  }
-  .col-6 {
-    width: 50%;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-  }
-  .col-8 {
-    width: 66.66666%;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-  }
-  .col-10 {
-    width: 83.33333%;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-  }
-  .col-12 {
-    width: 100%;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-  }
 }

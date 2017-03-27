@@ -1,24 +1,47 @@
 import React from 'react';
+import api from '../api';
 
 class Console extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      maxim: "",
+      challenge: ""
+    }
+  }
+
+  handleMaximChange = (e) => {
+    this.setState({maxim: e.target.value});
+  }
+
+  handleChallengeChange = (e) => {
+    this.setState({challenge: e.target.value});
+  }
+
+  postMaxim = (e) => {
+    e.preventDefault();
+    api.postMaxim(this.state.maxim, this.state.challenge).end((err, res) => {console.log("Posting Maxim/Challenge")});
+  }
+
   render() {
     return (
       <div className="console">
         <div className="row">
-          <div className="col-12">
+          <div className="col-8 offset-2">
             <h2>Welcome to the Admin Console</h2>
           </div>
         </div>
         <div className="row">
-          <div className="col-12">
-            <form id="console-form">
+          <div className="col-8 offset-2">
+            <form id="console-form" onSubmit={this.postMaxim}>
               <fieldset>
                 <label htmlFor="post-maxim" className="console-label">Post a New Maxim</label>
-                <textarea name="post-maxim" className="console-textarea"></textarea>
+                <textarea name="post-maxim" className="console-textarea" onChange={this.handleMaximChange}></textarea>
                 <label htmlFor="post-challenge" className="console-label">Post a New Challenge</label>
-                <textarea name="post-challenge" className="console-textarea"></textarea>
+                <textarea name="post-challenge" className="console-textarea" onChange={this.handleChallengeChange}></textarea>
               </fieldset>
-              <button type="submit" className="console-submit">Post</button>
+              <input type="submit" className="console-submit" value="Post"/>
             </form>
           </div>
         </div>

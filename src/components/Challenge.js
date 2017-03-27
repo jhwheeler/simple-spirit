@@ -22,12 +22,12 @@ class Challenge extends React.Component {
     return(
       <div className="challenge">
         <div className="row">
-          <div className="col-10 challenge-content">
+          <div className="col-8 offset-2 challenge-content">
             <p>{this.props.content}</p>
           </div>
         </div>
         <div className="row">
-          <div className="col-10">
+          <div className="col-8 offset-2">
             <p className="experience-button" onClick={this.toggleTextArea}>
               Share your experience...
             </p>
