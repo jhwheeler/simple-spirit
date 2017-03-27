@@ -45,8 +45,6 @@ class Console extends React.Component {
                 <textarea name="post-maxim" className="console-textarea" onChange={this.handleMaximChange}></textarea>
                 <label htmlFor="post-challenge" className="console-label">Post a New Challenge</label>
                 <textarea name="post-challenge" className="console-textarea" onChange={this.handleChallengeChange}></textarea>
-                <label htmlFor="post-maximId" className="console-label">ID Number</label>
-                <input name="post-id" className="console-input" onChange={this.handleIdChange}/>
               </fieldset>
               <input type="submit" className="console-submit" value="Post"/>
             </form>

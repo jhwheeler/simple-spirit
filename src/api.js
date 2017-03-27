@@ -14,7 +14,7 @@ const api = {
   },
 
   postMaxim: (maxim, challenge) => {
-    const randId = Math.random() * 10;
+    const randId = Math.floor(Math.random() * 10);
     return superagent
       .post('/api/maxim/')
       .send({maxim: maxim, challenge: challenge, maximId: randId});

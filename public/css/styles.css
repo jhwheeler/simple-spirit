@@ -7,6 +7,7 @@ body {
   margin: 0;
   background-image: url('/images/texture.jpg');
   background-repeat: repeat;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -61,18 +62,15 @@ p {
 }
 
 .challenge {
-  margin: 0px 200px;
   line-height: 30px;
-}
-
-.experience-button {
-  margin: 20px 0px;
-  text-align: center;
-  cursor: pointer;
 }
 
 .experience-recording {
   margin: 40px 0px;
+  text-align: center;
+}
+
+.experience-button-wrapper {
   text-align: center;
 }
 
@@ -130,7 +128,7 @@ fieldset {
   margin: 0px;
 }
 
-.login-button {
+.login-button, .experience-button {
   width: 180px;
   height: 40px;
   background-color: #1e1e1e;
@@ -138,6 +136,7 @@ fieldset {
   font-size: 14px;
   border: none;
   margin: 20px;
+  cursor: pointer;
 }
 
 .menu {

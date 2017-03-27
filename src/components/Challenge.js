@@ -27,10 +27,10 @@ class Challenge extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-8 offset-2">
-            <p className="experience-button" onClick={this.toggleTextArea}>
-              Share your experience...
-            </p>
+          <div className="col-8 offset-2 experience-button-wrapper">
+            <button className="experience-button" onClick={this.toggleTextArea}>
+              Share your experience
+            </button>
           </div>
           <div className="row">
             <div className="col-8 offset-2">
