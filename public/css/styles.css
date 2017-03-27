@@ -179,6 +179,10 @@ fieldset {
   text-align: center;
 }
 
+.console-header {
+  text-align: center;
+}
+
 .console .row .col-12 h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -201,6 +205,11 @@ fieldset {
   margin-top: 20px;
 }
 
+.console-input {
+  margin-top: 10px;
+  width: 40px;
+}
+
 .console-submit {
   width: 180px;
   height: 40px;
@@ -208,6 +217,7 @@ fieldset {
   color: #fff;
   font-size: 14px;
   border: none;
+  margin: 20px 0px;
 }
 
 /* Utility classes */

@@ -7,7 +7,8 @@ class Console extends React.Component {
 
     this.state = {
       maxim: "",
-      challenge: ""
+      challenge: "",
+      maximId: null
     }
   }
 
@@ -19,16 +20,20 @@ class Console extends React.Component {
     this.setState({challenge: e.target.value});
   }
 
+  handleIdChange = (e) => {
+    this.setState({maximId: e.target.value});
+  }
+
   postMaxim = (e) => {
     e.preventDefault();
-    api.postMaxim(this.state.maxim, this.state.challenge).end((err, res) => {console.log("Posting Maxim/Challenge")});
+    api.postMaxim(this.state.maxim, this.state.challenge, this.state.maximId).end((err, res) => {console.log("Posting Maxim/Challenge")});
   }
 
   render() {
     return (
       <div className="console">
         <div className="row">
-          <div className="col-8 offset-2">
+          <div className="col-8 offset-2 console-header">
             <h2>Welcome to the Admin Console</h2>
           </div>
         </div>
@@ -40,6 +45,8 @@ class Console extends React.Component {
                 <textarea name="post-maxim" className="console-textarea" onChange={this.handleMaximChange}></textarea>
                 <label htmlFor="post-challenge" className="console-label">Post a New Challenge</label>
                 <textarea name="post-challenge" className="console-textarea" onChange={this.handleChallengeChange}></textarea>
+                <label htmlFor="post-maximId" className="console-label">ID Number</label>
+                <input name="post-id" className="console-input" onChange={this.handleIdChange}/>
               </fieldset>
               <input type="submit" className="console-submit" value="Post"/>
             </form>
