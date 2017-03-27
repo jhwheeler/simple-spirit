@@ -31,9 +31,13 @@ class Challenge extends React.Component {
             <p className="experience-button" onClick={this.toggleTextArea}>
               Share your experience...
             </p>
-            { showTextArea && (
-              <ExperienceRecording/>
-            )}
+          </div>
+          <div className="row">
+            <div className="col-8 offset-2">
+              { showTextArea && (
+                <ExperienceRecording/>
+              )}
+            </div>
           </div>
         </div>
       </div>

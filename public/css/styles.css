@@ -40,6 +40,7 @@ p {
 .prompt {
   text-align: center;
   padding: 10px;
+  margin: 20px 0px;
 }
 
 .prompt-button {
@@ -67,10 +68,12 @@ p {
 .experience-button {
   margin: 20px 0px;
   text-align: center;
+  cursor: pointer;
 }
 
 .experience-recording {
   margin: 40px 0px;
+  text-align: center;
 }
 
 .archive-item {
@@ -80,6 +83,7 @@ p {
 .archive-header {
   font-weight: 400;
   margin-left: 10px;
+  text-align: center;
 }
 
 .archive-link-container {
@@ -105,11 +109,12 @@ p {
 }
 
 .experience-recording-textarea {
-  height: 250px;
-  width: 600px;
-  margin: 10px 0px;;
+  height: 200px;
+  width: 100%;
+  margin: 10px 0px;
   resize: none;
   outline: none;
+  display: block;
 }
 
 fieldset {
