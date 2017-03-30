@@ -101,7 +101,7 @@ p {
   margin-left: 10px;
 }
 
-.login {
+.login, .register {
   text-align: center;
 }
 
@@ -120,14 +120,18 @@ fieldset {
   padding: 0px;
 }
 
-.user-input, .pass-input {
+.user-input, .email-input, .name-input, .pass-input {
   width: 180px;
   height: 40px;
   padding: 10px;
   margin: 0px;
 }
 
-.login-button, .experience-button {
+.already-user, .register-link {
+  text-decoration: none;
+}
+
+.login-button, .experience-button, .register-button {
   width: 180px;
   height: 40px;
   background-color: #1e1e1e;

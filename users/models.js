@@ -9,21 +9,19 @@ const UserSchema = mongoose.Schema({
     required: true,
     unique: true
   },
+  email: {type: String, default: ""},
   password: {
     type: String,
     required: true
   },
-  firstName: {type: String, default: ""},
-  lastName: {type: String, default: ""},
-  email: {type: String, default: ""}
+  role: {type: String, default: "user"}
 });
 
 UserSchema.methods.apiRep = function() {
   return {
     username: this.username || '',
-    firstName: this.firstName || '',
-    lastName: this.lastName || '',
-    email: this.email || ''
+    email: this.email || '',
+    role: this.role || ''
   };
 }
 

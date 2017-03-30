@@ -12,10 +12,11 @@ app.use(bodyParser.json());
 
 const {PORT, DATABASE_URL} = require('./config');
 const {Maxim} = require('./models');
+const {User} = require('./users/models');
 
 app.use(express.static('public'));
 
-app.get(['/login', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
+app.get(['/login', '/register', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
 
 app.get('/api/maxims', (req, res) => {
@@ -117,6 +118,31 @@ app.delete('/api/maxim/:maximId', (req, res) => {
     .exec()
     .then(data => res.status(204).json(data))
     .catch(err => res.status(500).json({message: 'Internal server error'}));
+});
+
+app.post('/api/users', (req, res) => {
+
+  const requiredFields = ['username', 'email', 'password'];
+  for (let i=0; i<requiredFields.length; i++) {
+    const field = requiredFields[i];
+    if (!(field in req.body)) {
+      const message = `Missing \`${field}\` in request body`
+      console.error(message);
+      return res.status(400).send(message);
+    }
+  }
+
+  User
+    .create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    })
+    .then(data => res.status(200).json(data))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({message: 'Internal server error'});
+    });
 });
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {

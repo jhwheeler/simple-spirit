@@ -2,7 +2,7 @@ import React from 'react';
 import api from '../api';
 
 import Header from './Header';
-import ArchiveItem from './ArchiveItem';
+import Maxim from './Maxim';
 import Menu from './Menu';
 
 class Archive extends React.Component {
@@ -21,9 +21,16 @@ class Archive extends React.Component {
   }
 
   render() {
-    const archive = this.state.maxims.map((maxim) => (
-      <ArchiveItem maxim={maxim}/>
+    let archive = this.state.maxims.map((maxim) => (
+      <div className="col-8 offset-2 archive-item">
+        <div className="archive-number">{maxim.maximId}.</div>
+        <Maxim quote={maxim.maxim} />
+      </div>
     ));
+
+    if (archive.length < 1) {
+      archive = <p>No maxims available.</p>
+    }
 
     return (
       <div className="archive">
@@ -33,7 +40,9 @@ class Archive extends React.Component {
             <h2 className="archive-header">Archive</h2>
           </div>
         </div>
+        <div className="row">
         { archive }
+        </div>
         <Menu/>
       </div>
     );

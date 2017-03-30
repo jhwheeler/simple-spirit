@@ -18,6 +18,12 @@ const api = {
     return superagent
       .post('/api/maxim/')
       .send({maxim: maxim, challenge: challenge, maximId: randId});
+  },
+
+  postUser: (username, email, password) => {
+    return superagent
+      .post('/api/users')
+      .send({username: username, email: email, password: password})
   }
 }
 

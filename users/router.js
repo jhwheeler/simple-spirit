@@ -34,7 +34,7 @@ const basicStrategy = new BasicStrategy((username, password, callback) => {
 passport.use(basicStrategy);
 router.use(passport.initialize());
 
-router.post('/', (req, res) => {
+router.post('/api/users', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
   }
@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
     return res.status(422).json({message: 'Missing field: username'});
   }
 
-  let {username, password, firstName, lastName, email} = req.body;
+  let {username, password, name, email} = req.body;
 
   if (typeof username !== 'string') {
     return res.status(422).json({message: 'Incorrect field type: username'});
@@ -86,7 +86,7 @@ router.post('/', (req, res) => {
         .create({
           username: username,
           password: hash,
-          firstName: firstName,
+          name: name,
           lastName: lastName,
           email: email
         })
