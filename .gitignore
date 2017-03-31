@@ -2,5 +2,5 @@ node_modules
 .swp
 inspiration
 npm-debug.log
-index.bundle.js
+public/index.bundle.js
 maxims.json
