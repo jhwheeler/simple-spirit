@@ -1,13 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
-const {router: usersRouter} = require('./users');
+const router = require('./users/router');
 
 mongoose.Promise = global.Promise;
 
 const app = express();
 const path = require('path');
+
 app.use(bodyParser.json());
 
 const {PORT, DATABASE_URL} = require('./config');
@@ -15,6 +19,16 @@ const {Maxim} = require('./models');
 const {User} = require('./users/models');
 
 app.use(express.static('public'));
+
+app.use(session({
+  secret: 'super secret passphrase',
+  store: new MongoStore({url: DATABASE_URL}),
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get(['/login', '/register', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
@@ -181,5 +195,7 @@ function closeServer() {
 if (require.main === module) {
   runServer().catch(err => console.error(err));
 };
+
+router(app);
 
 module.exports = {app, runServer, closeServer};
