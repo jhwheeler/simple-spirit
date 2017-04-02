@@ -3,6 +3,7 @@ import api from '../api';
 
 import Header from './Header';
 import Maxim from './Maxim';
+import {Link} from 'react-router-dom';
 import Menu from './Menu';
 
 class Archive extends React.Component {
@@ -24,7 +25,9 @@ class Archive extends React.Component {
     let archive = this.state.maxims.map((maxim) => (
       <div className="col-8 offset-2 archive-item">
         <div className="archive-number">{maxim.maximId}.</div>
-        <Maxim quote={maxim.maxim} />
+        <Link to={`maxim/${maxim.maximId}`}>
+          <Maxim quote={maxim.maxim} />
+        </Link>
       </div>
     ));
 
