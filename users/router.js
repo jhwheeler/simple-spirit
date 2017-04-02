@@ -22,7 +22,7 @@ module.exports = function(app) {
   apiRoutes.use('/auth', authRoutes);
 
   // registration route
-  authRoutes.post('/register', AuthenticationController.register);
+  authRoutes.post('/api/users', AuthenticationController.register);
 
   // login route
   authRoutes.post('/login', requireLogin, AuthenticationController.login);
