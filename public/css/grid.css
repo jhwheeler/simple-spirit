@@ -5,6 +5,7 @@
 .row {
   max-width: 1600px;
   margin: 0 auto;
+  padding: 0px 5px;
 }
 
 .row::before,

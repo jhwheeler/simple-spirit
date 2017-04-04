@@ -76,6 +76,7 @@ p {
 
 .archive-item {
   padding: 10px 0px;
+  text-align: center;
 }
 
 .about-header, .archive-header {
@@ -86,12 +87,14 @@ p {
 
 .archive-link-container {
   text-decoration: none;
+  display: inline-block;
 }
 
 .archive-number {
+  position: relative;
+  top: 50%;
+  transform: translateY(-100%);
   display: inline-block;
-  position: fixed;
-  margin-left: 10px;
 }
 
 .archive-item .maxim p {

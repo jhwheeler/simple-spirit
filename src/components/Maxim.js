@@ -1,16 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Maxim extends React.Component {
   render() {
-    return(
-      <div className="maxim">
-        <div className="row">
-          <div className="col-8 offset-2 maxim-content">
-            <p>{this.props.quote}</p>
+    if (this.props.link) {
+      return (
+        <div className="maxim">
+          <div className="row">
+            <div className="maxim-content">
+              <Link to={this.props.link}>
+                <p>{this.props.quote}</p>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+        return (
+            <div className="maxim">
+            <div className="row">
+              <div className="maxim-content">
+                <p>{this.props.quote}</p>
+              </div>
+            </div>
+          </div>
+      );
+    }
   }
 }
 

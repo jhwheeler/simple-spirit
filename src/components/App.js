@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
     return (
-      <div className="main">
+      <div className="main row">
         <Header/>
         <ContentContainer maximId={maximId}/>
         <Menu/>

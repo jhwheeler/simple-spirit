@@ -46,9 +46,13 @@ class ContentContainer extends React.Component {
       renderedContent = <Maxim quote={this.state.maxim.maxim}/>;
     }
       return (
-        <div className="content-container">
-          {renderedContent}
-          <Prompt prompt={this.state.prompt} onClick={this.changeContent}/>
+        <div className="content-container col-12">
+          <div className="row">
+            {renderedContent}
+          </div>
+          <div className="row">
+            <Prompt prompt={this.state.prompt} onClick={this.changeContent}/>
+          </div>
         </div>
       );
   }

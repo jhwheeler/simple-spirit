@@ -6,17 +6,17 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 const router = require('./users/router');
-
-mongoose.Promise = global.Promise;
+const passportFunctions = require('./authenticate/passport');
+const {PORT, DATABASE_URL} = require('./config');
+const {Maxim} = require('./models');
+const {User} = require('./users/models');
 
 const app = express();
 const path = require('path');
 
-app.use(bodyParser.json());
+mongoose.Promise = global.Promise;
 
-const {PORT, DATABASE_URL} = require('./config');
-const {Maxim} = require('./models');
-const {User} = require('./users/models');
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
@@ -29,6 +29,9 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.use(passportFunctions.jwtLogin);
+passport.use(passportFunctions.localLogin);
 
 app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
