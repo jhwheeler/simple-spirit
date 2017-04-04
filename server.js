@@ -30,7 +30,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get(['/login', '/register', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
+app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
 
 app.get('/api/maxims', (req, res) => {
