@@ -8,13 +8,13 @@ class About extends React.Component {
     return (
       <div className="about">
         <Header/>
-        <div className="row">
-          <div className="col-8 offset-2 about-content">
+        <div className="row about-content">
+          <div className="col-8 offset-2">
             <h2 className="about-header">About</h2>
           </div>
         </div>
         <div className="row">
-          <div classname="col-10 offset-1">
+          <div className="col-10 offset-1">
             <p>Welcome to Simple Spirit.</p>
             <br/>
             <p>This space is here to help you listen to the silence. To help you connect with the beautifuly simplicity of Spirit.</p>

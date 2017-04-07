@@ -9,7 +9,6 @@ const router = express.Router();
 
 router.use(jsonParser);
 
-
 const strategy = new BasicStrategy(
   (username, password, cb) => {
     User

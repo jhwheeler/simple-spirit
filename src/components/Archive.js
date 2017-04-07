@@ -23,7 +23,7 @@ class Archive extends React.Component {
 
   render() {
     let archive = this.state.maxims.map((maxim) => (
-      <div className="archive-item">
+      <div key={maxim.maximId} className="archive-item">
         <div className="archive-link-container">
           <div className="archive-number">{maxim.maximId}.</div>
             <Maxim link={`maxim/${maxim.maximId}`} quote={maxim.maxim} />

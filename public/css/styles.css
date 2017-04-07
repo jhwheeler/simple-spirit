@@ -36,6 +36,13 @@ p {
   text-align: center;
   color: #292526;
   margin: 0 auto;
+  display: inline-block;
+}
+
+.maxim-content a {
+  text-decoration: none;
+  color: #292526;
+  margin: 10px 0px;
 }
 
 .prompt {
