@@ -20,12 +20,8 @@ const UserSchema = mongoose.Schema({
   role: {
     type: String,
     enum: ["user", "admin"],
-    default: "user"},
-  resetPasswordToken: { type: String },
-  resetPasswordExpires: { type: Date }
-},
-{
-  timestamps: true
+    default: "user"
+  }
 });
 
 UserSchema.methods.apiRep = function() {
@@ -36,29 +32,16 @@ UserSchema.methods.apiRep = function() {
   };
 }
 
-UserSchema.pre('save', function(next) {
-  const user = this,
-        SALT_FACTOR = 5;
+UserSchema.methods.validatePassword = function(password) {
+  return bcrypt
+    .compare(password, this.password)
+    .then(isValid => isValid);
+}
 
-  if (!user.isModified('password')) return next();
-
-  bcrypt.genSalt(SALT_FACTOR, function(err, salt) {
-    if (err) return next(err);
-
-    bcrypt.hash(user.password, salt, null, function(err, hash) {
-      if (err) return next(err);
-      user.password = hash;
-      next();
-    });
-  });
-});
-
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-    if (err) { return cb(err); }
-
-    cb(null, isMatch);
-  });
+UserSchema.statics.hashPassword = function(password) {
+  return bcrypt
+    .hash(password, 10)
+    .then(hash => hash);
 }
 
 const User = mongoose.model('User', UserSchema);

@@ -5,8 +5,7 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const router = require('./users/router');
-const passportFunctions = require('./authenticate/passport');
+const {router: usersRouter} = require('./users');
 const {PORT, DATABASE_URL} = require('./config');
 const {Maxim} = require('./models');
 const {User} = require('./users/models');
@@ -20,18 +19,10 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-app.use(session({
-  secret: 'super secret passphrase',
-  store: new MongoStore({url: DATABASE_URL}),
-  resave: false,
-  saveUninitialized: false
-}));
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(passportFunctions.jwtLogin);
-passport.use(passportFunctions.localLogin);
+app.use('/users/', usersRouter);
 
 app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
@@ -198,7 +189,5 @@ function closeServer() {
 if (require.main === module) {
   runServer().catch(err => console.error(err));
 };
-
-router(app);
 
 module.exports = {app, runServer, closeServer};
