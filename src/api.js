@@ -28,7 +28,7 @@ const api = {
 
   loginUser: (username, password) => {
     return superagent
-      .post('/api/users/login')
+      .post('/login')
       .send({username: username, password: password})
   }
 }
