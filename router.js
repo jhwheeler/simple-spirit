@@ -112,30 +112,4 @@ router.delete('/api/maxim/:maximId', (req, res) => {
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
-/*router.post('/api/users', (req, res) => {
-
-  const requiredFields = ['username', 'email', 'password'];
-  for (let i=0; i<requiredFields.length; i++) {
-    const field = requiredFields[i];
-    if (!(field in req.body)) {
-      const message = `Missing \`${field}\` in request body`
-      console.error(message);
-      return res.status(400).send(message);
-    }
-  }
-
-  User
-    .create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
-    })
-    .then(data => res.status(200).json(data))
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({message: 'Internal server error'});
-    });
-});
-*/
-
 module.exports = {router}

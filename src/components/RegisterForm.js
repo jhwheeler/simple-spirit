@@ -37,15 +37,15 @@ class RegisterForm extends React.Component {
         <fieldset name="register-info">
             <label htmlFor="username" className="visually-hidden">Username</label>
             <br/>
-            <input className="user-input" type="text" name="username" placeholder="username" id="username" onChange={this.handleUserChange}></input>
+            <input className="user-input" type="text" name="username" placeholder="username" id="username" onChange={this.handleUserChange}/>
             <br/>
             <label htmlFor="email" className="visually-hidden">Email</label>
             <br/>
-            <input className="email-input" type="text" name="email" placeholder="email" id="email" onChange={this.handleEmailChange}></input>
+            <input className="email-input" type="text" name="email" placeholder="email" id="email" onChange={this.handleEmailChange}/>
             <br/>
             <label htmlFor="password" className="visually-hidden">Password</label>
             <br/>
-            <input className="pass-input" type="password" name="password" placeholder="password" id="password" onChange={this.handlePasswordChange}></input>
+            <input className="pass-input" type="password" name="password" placeholder="password" id="password" onChange={this.handlePasswordChange}/>
         </fieldset>
         <input type="submit" className="register-button" value="create"/>
         <Link to="/login"><p className="already-user">Already a user? Login</p></Link>

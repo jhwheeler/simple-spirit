@@ -3,11 +3,11 @@ const {BasicStrategy} = require('passport-http'),
       jsonParser = require('body-parser').json(),
       passport = require('passport');
 
-const {User} = require('./models');
+const {User} = require('../models');
 
-const router = express.Router();
+const registerRouter = express.Router();
 
-router.use(jsonParser);
+registerRouter.use(jsonParser);
 
 const strategy = new BasicStrategy(
   (username, password, cb) => {
@@ -30,7 +30,7 @@ const strategy = new BasicStrategy(
 
 passport.use(strategy);
 
-router.post('/', (req, res) => {
+registerRouter.post('/', (req, res) => {
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
   }
@@ -103,34 +103,4 @@ router.post('/', (req, res) => {
     });
 });
 
-const basicStrategy = new BasicStrategy(function(username, password, callback) {
-  let user;
-  User
-    .findOne({username: username})
-    .exec()
-    .then(_user => {
-      user = _user;
-      if (!user) {
-        return callback(null, false, {message: 'Incorrect username'});
-      }
-      return user.validatePassword(password);
-    })
-    .then(isValid => {
-      if (!isValid) {
-        return callback(null, false, {messsage: 'Incorrect password'});
-      }
-      else {
-        return callback(null, user)
-      }
-    });
-});
-
-passport.use(basicStrategy);
-router.use(passport.initialize());
-
-router.get('/console',
-  passport.authenticate('basic', {session: true}),
-  (req, res) => res.json({user: req.user.apiRep()})
-);
-
-module.exports = {router};
+module.exports = {registerRouter};

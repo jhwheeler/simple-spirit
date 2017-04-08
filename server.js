@@ -5,7 +5,9 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const {router: usersRouter} = require('./users');
+const {adminRouter} = require('./users/routes/adminRouter');
+const {loginRouter} = require('./users/routes/loginRouter');
+const {registerRouter} = require('./users/routes/registerRouter');
 const {PORT, DATABASE_URL} = require('./config');
 const {router} = require('./router');
 
@@ -21,7 +23,9 @@ app.use(express.static('public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('api/users/', usersRouter);
+app.use('/api/users/', registerRouter);
+app.use('/login', loginRouter);
+app.use('/console', adminRouter);
 
 app.use('/', router);
 
