@@ -1,15 +1,13 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const passport = require('passport');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+const express = require('express'),
+      bodyParser = require('body-parser'),
+      mongoose = require('mongoose'),
+      passport = require('passport');
 
-const {adminRouter} = require('./users/routes/adminRouter');
-const {loginRouter} = require('./users/routes/loginRouter');
-const {registerRouter} = require('./users/routes/registerRouter');
-const {PORT, DATABASE_URL} = require('./config');
-const {router} = require('./router');
+const {adminRouter} = require('./users/routes/adminRouter'),
+      {loginRouter} = require('./users/routes/loginRouter'),
+      {registerRouter} = require('./users/routes/registerRouter'),
+      {PORT, DATABASE_URL} = require('./config'),
+      {router} = require('./router');
 
 const app = express();
 const path = require('path');
