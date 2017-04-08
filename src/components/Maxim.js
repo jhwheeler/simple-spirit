@@ -6,22 +6,18 @@ class Maxim extends React.Component {
     if (this.props.link) {
       return (
         <div className="maxim">
-          <div className="row">
-            <div className="maxim-content">
-              <Link to={this.props.link}>
-                <p>{this.props.quote}</p>
-              </Link>
-            </div>
+          <div className="maxim-content">
+            <Link to={this.props.link}>
+              <p>{this.props.quote}</p>
+            </Link>
           </div>
         </div>
       );
     } else {
         return (
-            <div className="maxim">
-            <div className="row">
-              <div className="maxim-content">
-                <p>{this.props.quote}</p>
-              </div>
+          <div className="maxim">
+            <div className="maxim-content">
+              <p>{this.props.quote}</p>
             </div>
           </div>
       );
