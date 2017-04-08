@@ -37,8 +37,14 @@ const strategy = new BasicStrategy(function(username, password, callback) {
 passport.use(strategy);
 loginRouter.use(passport.initialize());
 
-loginRouter.post('/login',
-  passport.authenticate('basic')
+loginRouter.post('/',
+  passport.authenticate('basic',
+    {
+      session: true,
+      successRedirect: '/console',
+      failureRedirect: '/login'
+    }
+  )
 );
 
 module.exports = {loginRouter};
