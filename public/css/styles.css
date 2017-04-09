@@ -7,7 +7,7 @@ body {
   margin: 0;
   background-image: url('/images/texture.jpg');
   background-repeat: repeat;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -74,6 +74,7 @@ p {
 
 .challenge {
   line-height: 30px;
+  text-align: center;
 }
 
 .experience-recording {
