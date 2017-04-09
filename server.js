@@ -2,7 +2,7 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose');
 
-const {adminRouter} = require('./users/routes/adminRouter'),
+const //{adminRouter} = require('./users/routes/adminRouter'),//
       {loginRouter} = require('./users/routes/loginRouter'),
       {registerRouter} = require('./users/routes/registerRouter'),
       {PORT, DATABASE_URL} = require('./config'),
@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 app.use('/api/users/', registerRouter);
 app.use('/login', loginRouter);
-app.use('/console', adminRouter);
+//app.use('/console', adminRouter);
 
 app.use('/', router);
 

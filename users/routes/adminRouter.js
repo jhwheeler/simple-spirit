@@ -1,7 +1,6 @@
-const {BasicStrategy} = require('passport-http'),
-      express = require('express'),
-      jsonParser = require('body-parser').json(),
-      passport = require('passport');
+const express = require('express'),
+      session = require('express-session'),
+      jsonParser = require('body-parser').json();
 
 const {User} = require('../models');
 

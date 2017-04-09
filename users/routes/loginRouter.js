@@ -1,4 +1,5 @@
 const express = require('express'),
+      session = require('express-session'),
       jsonParser = require('body-parser').json();
 
 const {User} = require('../models');
@@ -32,7 +33,7 @@ function authenticateUser(username, password) {
   });
 }
 
-loginRouter.post('/',(req, res, next) => {
+loginRouter.post('/', (req, res, next) => {
   let username = req.body.username,
       password = req.body.password;
   authenticateUser(username, password)
@@ -49,5 +50,14 @@ loginRouter.post('/',(req, res, next) => {
       }
     );
 });
+
+loginRouter.get('/console', (req, res, next) => {
+  let username = req.body.username,
+      password = req.body.password;
+  authenticateUser(username, password)
+    .then(data => res.json(
+      //write authenticate user code here
+    ))
+})
 
 module.exports = {loginRouter};
