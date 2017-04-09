@@ -21,8 +21,14 @@ app.use(express.static('public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.post('/blah', (req, res, next) => {
+  passport.authenticate('basic', (err, user, info) => {
+    console.log('test');
+  })(req, res, next);
+});
+
 app.use('/api/users/', registerRouter);
-app.use('/login', loginRouter);
+// app.use('/login', loginRouter);
 app.use('/console', adminRouter);
 
 app.use('/', router);

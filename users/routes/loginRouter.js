@@ -5,9 +5,6 @@ const {BasicStrategy} = require('passport-http'),
 
 const {User} = require('../models');
 
-const loginRouter = express.Router();
-
-loginRouter.use(jsonParser);
 
 const strategy = new BasicStrategy(function(username, password, callback) {
   console.log(arguments);
@@ -46,4 +43,4 @@ loginRouter.post('/',
   )
 );
 
-module.exports = {loginRouter};
+module.exports = passport;
