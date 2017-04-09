@@ -1,7 +1,6 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
-      mongoose = require('mongoose'),
-      passport = require('passport');
+      mongoose = require('mongoose');
 
 const {adminRouter} = require('./users/routes/adminRouter'),
       {loginRouter} = require('./users/routes/loginRouter'),
@@ -17,9 +16,6 @@ mongoose.Promise = global.Promise;
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use('/api/users/', registerRouter);
 app.use('/login', loginRouter);
