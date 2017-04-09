@@ -1,7 +1,5 @@
-const {BasicStrategy} = require('passport-http'),
-      express = require('express'),
-      jsonParser = require('body-parser').json(),
-      passport = require('passport');
+const express = require('express'),
+      jsonParser = require('body-parser').json();
 
 const {User} = require('../models');
 
@@ -9,28 +7,8 @@ const registerRouter = express.Router();
 
 registerRouter.use(jsonParser);
 
-const strategy = new BasicStrategy(
-  (username, password, cb) => {
-    User
-      .findOne({username})
-      .exec()
-      .then(user => {
-        if (!user) {
-          return cb(null, false, {
-            message: 'No such user'
-          });
-        }
-        if (user.password !== password) {
-          return cb(null, false, 'Incorrect password');
-        }
-        return cb(null, user);
-      })
-      .catch(err => cb(err))
-});
-
-passport.use(strategy);
-
 registerRouter.post('/', (req, res) => {
+  console.log(req.body);
   if (!req.body) {
     return res.status(400).json({message: 'No request body'});
   }

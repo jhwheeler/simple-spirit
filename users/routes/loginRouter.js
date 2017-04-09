@@ -35,7 +35,6 @@ const strategy = new BasicStrategy(function(username, password, callback) {
 });
 
 passport.use(strategy);
-loginRouter.use(passport.initialize());
 
 loginRouter.post('/',
   passport.authenticate('basic',
