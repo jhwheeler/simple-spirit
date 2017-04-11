@@ -1,48 +1,60 @@
 const express = require('express'),
-      session = require('express-session'),
+      sessions = require('client-sessions'),
       jsonParser = require('body-parser').json();
 
 const {User} = require('../models');
+const {loginRouter} = require('./loginRouter');
 
 const adminRouter = express.Router();
 
 adminRouter.use(jsonParser);
 
-const basicStrategy = new BasicStrategy(function(username, password, callback) {
-  console.log(arguments);
-  let user;
-  User
-    .findOne({username: username})
-    .exec()
-    .then(_user => {
-      console.log(_user);
-      user = _user;
-      if (!user) {
-        return callback(null, false, {message: 'Incorrect username'});
-      }
-      return user.validatePassword(password);
+function adminRedirect(username, password) {
+  return new Promise((resolve, reject) => {
+    console.log(arguments);
+    let user;
+
+    if (req.shiva && req.shiva.user) {
+      console.log(req.shiva);
+      //check for username in db
+      User
+        .findOne({username: username})
+        .exec()
+        .then(_user => {
+          user = _user;
+          if (!user) {
+            reject(false, {message: 'No such username'});
+          }
+          return user;
+        })
+      //check whether role is `admin`
+        .then(user => {
+          if (user.role != 'admin'){
+            req.shiva.reset();
+            res.redirect('/login');
+          } else {
+            resolve(user);
+          }
+        })
+    } else {
+      res.redirect('/login');
+    }
+  })
+}
+
+adminRouter.post('/', (req, res, next) => {
+  let username = req.body.username,
+      role = req.body.role;
+  adminRedirect(username, password)
+    .then(data => {
+      res.redirect('/console');
     })
-    .then(isValid => {
-      console.log(isValid);
-      if (!isValid) {
-        return callback(null, false, {messsage: 'Incorrect password'});
+    .catch(
+      err => {
+        console.error(err);
+        res.status(401).json({message: 'Failed to login'})
       }
-      else {
-        return callback(null, user)
-      }
-    });
+    );
 });
-
-passport.use(basicStrategy);
-adminRouter.use(passport.initialize());
-
-adminRouter.get('/',
-  passport.authenticate('basic', {
-    session: true,
-    successRedirect: '/',
-    failureRedirect: '/login'
-  }),
-  (req, res) => res.json({user: req.user.apiRep()})
-);
 
 module.exports = {adminRouter};

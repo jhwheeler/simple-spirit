@@ -187,7 +187,7 @@ fieldset {
   width: 45px;
 }
 
-.about-link, .share-link, .archive-link, .login-link {
+.home-link, .about-link, .share-link, .archive-link, .login-link {
   text-decoration: none;
   color: #fff;
   display: inline-block;

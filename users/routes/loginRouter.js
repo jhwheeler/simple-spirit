@@ -1,5 +1,5 @@
 const express = require('express'),
-      session = require('express-session'),
+      sessions = require('client-sessions'),
       jsonParser = require('body-parser').json();
 
 const {User} = require('../models');
@@ -37,12 +37,11 @@ loginRouter.post('/', (req, res, next) => {
   let username = req.body.username,
       password = req.body.password;
   authenticateUser(username, password)
-    .then(data => res.json(
-      {
-        "username": data.username,
-        "role": data.role
-      })
-    )
+    .then(data => {
+      req.shiva.user = data;
+      delete req.shiva.user.password;
+      res.redirect('/console');
+    })
     .catch(
       err => {
         console.error(err);
@@ -50,20 +49,5 @@ loginRouter.post('/', (req, res, next) => {
       }
     );
 });
-
-loginRouter.get('/console', (req, res, next) => {
-  let username = req.body.username,
-      password = req.body.password
-      role = req.body.role;
-
-  authenticateUser(username, password)
-    .then(data => {
-      if (role = "admin") {
-        return res.status(200);
-      } else {
-        router.redirect('/login');
-      }
-    })
-})
 
 module.exports = {loginRouter};

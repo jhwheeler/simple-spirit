@@ -1178,6 +1178,12 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
+client-sessions@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/client-sessions/-/client-sessions-0.7.0.tgz#1721e7e8df6ddfd50369f66f9db8ada0cc480270"
+  dependencies:
+    cookies "0.5.0"
+
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -1350,6 +1356,12 @@ cookiejar@2.0.x:
 cookiejar@^2.0.6:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.1.tgz#41ad57b1b555951ec171412a81942b1e8200d34a"
+
+cookies@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/cookies/-/cookies-0.5.0.tgz#164cac46a1d3ca3b3b87427414c24931d8381025"
+  dependencies:
+    keygrip "~1.0.0"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -2867,6 +2879,10 @@ kareem@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.2.1.tgz#acdb8c8119845834abbfa58ade1cf9dea63dc752"
 
+keygrip@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.1.tgz#b02fa4816eef21a8c4b35ca9e52921ffc89a30e9"
+
 kind-of@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.1.0.tgz#475d698a5e49ff5e53d14e3e732429dc8bf4cf47"
@@ -3563,29 +3579,6 @@ parseurl@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.1.tgz#c8ab8c9223ba34888aa64a297b28853bec18da56"
 
-passport-http@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/passport-http/-/passport-http-0.3.0.tgz#8ee53d4380be9c60df2151925029826f77115603"
-  dependencies:
-    passport-strategy "1.x.x"
-
-passport-local@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/passport-local/-/passport-local-1.0.0.tgz#1fe63268c92e75606626437e3b906662c15ba6ee"
-  dependencies:
-    passport-strategy "1.x.x"
-
-passport-strategy@1.x.x:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
-
-passport@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/passport/-/passport-0.3.2.tgz#9dd009f915e8fe095b0124a01b8f82da07510102"
-  dependencies:
-    passport-strategy "1.x.x"
-    pause "0.0.1"
-
 path-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/path-browserify/-/path-browserify-0.0.0.tgz#a0b870729aae214005b7d5032ec2cbbb0fb4451a"
@@ -3632,10 +3625,6 @@ path@^0.12.7:
   dependencies:
     process "^0.11.1"
     util "^0.10.3"
-
-pause@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
 
 pbkdf2@^3.0.3:
   version "3.0.9"

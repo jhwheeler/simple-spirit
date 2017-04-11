@@ -1,8 +1,9 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
+      sessions = require('client-sessions'),
       mongoose = require('mongoose');
 
-const //{adminRouter} = require('./users/routes/adminRouter'),//
+const {adminRouter} = require('./users/routes/adminRouter'),
       {loginRouter} = require('./users/routes/loginRouter'),
       {registerRouter} = require('./users/routes/registerRouter'),
       {PORT, DATABASE_URL} = require('./config'),
@@ -17,11 +18,18 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
+app.use(sessions({
+  cookieName: 'shiva',
+  secret: 'bM%Qf4mLJa!pnzS*hy-Jdu@e',
+  duration: 10 * 60 * 1000,
+  activeDuration: 1000 * 60 * 10
+}));
+
 app.use('/api/users/', registerRouter);
 app.use('/login', loginRouter);
-//app.use('/console', adminRouter);
-
+app.use('/console', adminRouter);
 app.use('/', router);
+
 
 app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
