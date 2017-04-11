@@ -53,11 +53,17 @@ loginRouter.post('/', (req, res, next) => {
 
 loginRouter.get('/console', (req, res, next) => {
   let username = req.body.username,
-      password = req.body.password;
+      password = req.body.password
+      role = req.body.role;
+
   authenticateUser(username, password)
-    .then(data => res.json(
-      //write authenticate user code here
-    ))
+    .then(data => {
+      if (role = "admin") {
+        return res.status(200);
+      } else {
+        router.redirect('/login');
+      }
+    })
 })
 
 module.exports = {loginRouter};
