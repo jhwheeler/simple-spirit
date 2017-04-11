@@ -6,16 +6,13 @@ class Menu extends React.Component {
     return(
       <div className="menu row">
           <div className="col-3-always menu-link-div">
-            <Link to="/login" className="login-link">Login</Link>
-          </div>
-          <div className="col-3-always menu-link-div">
             <Link to="/about" className="about-link">About</Link>
           </div>
           <div className="col-3-always menu-link-div">
-            <Link to="/" className="share-link">Share</Link>
+            <Link to="/archive" className="archive-link">Archive</Link>
           </div>
           <div className="col-3-always menu-link-div">
-            <Link to="/archive" className="archive-link">Archive</Link>
+            <Link to="/login" className="login-link">Login</Link>
           </div>
       </div>
     );
