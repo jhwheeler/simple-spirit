@@ -14,6 +14,8 @@ const path = require('path');
 
 mongoose.Promise = global.Promise;
 
+app.use(require('express-status-monitor')());
+
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
