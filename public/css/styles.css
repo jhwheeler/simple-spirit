@@ -73,6 +73,7 @@ p {
 }
 
 .challenge {
+  margin: 20px;
   line-height: 30px;
   text-align: center;
 }
@@ -91,7 +92,7 @@ p {
   text-align: center;
 }
 
-.about-header, .archive-header {
+h2, h3 {
   font-weight: 400;
   margin-left: 10px;
   text-align: center;

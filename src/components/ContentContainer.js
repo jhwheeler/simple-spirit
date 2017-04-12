@@ -43,11 +43,12 @@ class ContentContainer extends React.Component {
     if (this.state.content == "challenge") {
       renderedContent = <Challenge content={this.state.maxim.challenge}/>;
     } else {
-      renderedContent = <Maxim quote={this.state.maxim.maxim}/>;
+      renderedContent = null;
     }
       return (
         <div className="content-container col-12">
           <div className="row">
+            <Maxim quote={this.state.maxim.maxim}/>
             {renderedContent}
           </div>
           <div className="row">

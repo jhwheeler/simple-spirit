@@ -6,6 +6,7 @@ class Challenge extends React.Component {
       <div className="challenge">
         <div className="row">
           <div className="challenge-content">
+            <h3>Challenge:</h3>
             <p>{this.props.content}</p>
           </div>
         </div>
