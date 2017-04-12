@@ -15,7 +15,6 @@ class LoginForm extends React.Component {
             <input className="pass-input" type="password" name="password" placeholder="pass" id="password"/>
         </fieldset>
         <input type="submit" className="login-button" value="open"/>
-        <Link to="/register"><p className="register-link">Register</p></Link>
       </form>
     );
   }
