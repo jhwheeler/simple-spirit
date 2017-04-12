@@ -10,7 +10,6 @@ loginRouter.use(jsonParser);
 
 function authenticateUser(username, password) {
   return new Promise((resolve, reject) => {
-    console.log(arguments);
     let user;
     User
       .findOne({username: username})

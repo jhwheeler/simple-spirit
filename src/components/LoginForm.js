@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import api from '../api';
-
 class LoginForm extends React.Component {
   render() {
     return(
-      <form id="login" className="login">
+      <form action="/login" type="post" id="login" className="login">
         <fieldset name="login-info">
             <label htmlFor="user" className="visually-hidden">User</label>
             <br/>

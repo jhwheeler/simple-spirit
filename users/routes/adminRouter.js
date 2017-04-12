@@ -11,11 +11,9 @@ adminRouter.use(jsonParser);
 
 function adminRedirect(username, password) {
   return new Promise((resolve, reject) => {
-    console.log(arguments);
     let user;
 
     if (req.shiva && req.shiva.user) {
-      console.log(req.shiva);
       //check for username in db
       User
         .findOne({username: username})
@@ -33,7 +31,7 @@ function adminRedirect(username, password) {
             req.shiva.reset();
             res.redirect('/login');
           } else {
-            resolve(user);
+            res.redirect('/console');
           }
         })
     } else {
