@@ -23,6 +23,7 @@ p {
 
 .header {
   padding: 30px;
+  margin-bottom: 30px;
 }
 
 .header img {
@@ -45,7 +46,6 @@ p {
 
 .maxim {
   text-align: center;
-  margin-top: 80px;
 }
 
 .maxim-content a {
@@ -111,29 +111,12 @@ h2, h3 {
 .archive-number {
   position: relative;
   top: 50%;
-  transform: translateY(-100%);
+  transform: translateY(-25%);
   display: inline-block;
-}
-
-.archive-item .maxim p {
-  text-align: left;
-}
-
-.archive-date {
-  margin-left: 10px;
 }
 
 .login, .register {
   text-align: center;
-}
-
-.experience-recording-textarea {
-  height: 200px;
-  width: 100%;
-  margin: 10px 0px;
-  resize: none;
-  outline: none;
-  display: block;
 }
 
 fieldset {
