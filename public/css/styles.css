@@ -31,6 +31,10 @@ p {
   height: 100px;
 }
 
+.content-container {
+  margin-bottom: 60px;
+}
+
 .about-content, .maxim-content, .challenge-content {
   font-size: 20px;
   text-align: center;
@@ -41,6 +45,7 @@ p {
 
 .maxim {
   text-align: center;
+  margin-top: 80px;
 }
 
 .maxim-content a {
