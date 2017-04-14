@@ -1,7 +1,8 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
       sessions = require('client-sessions'),
-      mongoose = require('mongoose');
+      mongoose = require('mongoose'),
+      path = require('path');
 
 const {adminRouter} = require('./users/routes/adminRouter'),
       {loginRouter} = require('./users/routes/loginRouter'),
@@ -10,7 +11,6 @@ const {adminRouter} = require('./users/routes/adminRouter'),
       {router} = require('./router');
 
 const app = express();
-const path = require('path');
 
 mongoose.Promise = global.Promise;
 
@@ -33,7 +33,7 @@ app.use('/console', adminRouter);
 app.use('/', router);
 
 
-app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId', '/console'], (req, res) => {
+app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
 
 

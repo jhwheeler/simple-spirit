@@ -1,12 +1,14 @@
 const express = require('express'),
       sessions = require('client-sessions'),
-      jsonParser = require('body-parser').json();
+      bodyParser = require('body-parser');
 
 const {User} = require('../models');
 
 const loginRouter = express.Router();
 
-loginRouter.use(jsonParser);
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+loginRouter.use(urlencodedParser);
 
 function authenticateUser(username, password) {
   return new Promise((resolve, reject) => {
@@ -37,13 +39,14 @@ loginRouter.post('/', (req, res, next) => {
       password = req.body.password;
   authenticateUser(username, password)
     .then(data => {
+      data = data.toObject();
+      delete data.password;
       req.shiva.user = data;
-      delete req.shiva.user.password;
+      console.log(data);
       res.redirect('/console');
     })
     .catch(
       err => {
-        console.error(err);
         res.status(401).json({message: 'Failed to login'})
       }
     );

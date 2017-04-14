@@ -1,58 +1,21 @@
 const express = require('express'),
-      sessions = require('client-sessions'),
-      jsonParser = require('body-parser').json();
-
-const {User} = require('../models');
-const {loginRouter} = require('./loginRouter');
+      path = require('path');
 
 const adminRouter = express.Router();
+const {User} = require('../models');
 
-adminRouter.use(jsonParser);
-
-function adminRedirect(username, password) {
-  return new Promise((resolve, reject) => {
-    let user;
-
-    if (req.shiva && req.shiva.user) {
-      //check for username in db
-      User
-        .findOne({username: username})
-        .exec()
-        .then(_user => {
-          user = _user;
-          if (!user) {
-            reject(false, {message: 'No such username'});
-          }
-          return user;
-        })
-      //check whether role is `admin`
-        .then(user => {
-          if (user.role != 'admin'){
-            req.shiva.reset();
-            res.redirect('/login');
-          } else {
-            res.redirect('/console');
-          }
-        })
-    } else {
-      res.redirect('/login');
-    }
-  })
-}
-
-adminRouter.post('/', (req, res, next) => {
-  let username = req.body.username,
-      role = req.body.role;
-  adminRedirect(username, password)
+adminRouter.get('/', (req, res, next) => {
+  User
+    .findOne({username: req.shiva.user.username})
+    .exec()
     .then(data => {
-      res.redirect('/console');
-    })
-    .catch(
-      err => {
-        console.error(err);
-        res.status(401).json({message: 'Failed to login'})
+      if (!data || data.role != "admin") {
+        req.shiva.reset();
+        res.redirect('/login');
+      } else {
+        res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'index.html'))
       }
-    );
+    })
 });
 
 module.exports = {adminRouter};
