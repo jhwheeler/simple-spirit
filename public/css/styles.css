@@ -93,7 +93,6 @@ p {
 }
 
 .archive-item {
-  padding: 10px 0px;
   text-align: center;
 }
 
@@ -106,13 +105,8 @@ h2, h3 {
 .archive-link-container {
   text-decoration: none;
   display: inline-block;
-}
-
-.archive-number {
-  position: relative;
-  top: 50%;
-  transform: translateY(-25%);
-  display: inline-block;
+  padding: 28px 0px 7px 0px;
+  border-bottom: 1px solid gray;
 }
 
 .login, .register {
