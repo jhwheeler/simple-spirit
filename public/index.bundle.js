@@ -3838,8 +3838,10 @@ var api = {
   },
 
   postMaxim: function postMaxim(maxim, challenge) {
-    var randId = Math.floor(Math.random() * 10);
-    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/maxim/').send({ maxim: maxim, challenge: challenge, maximId: randId });
+    var maximArray = maxim.split(" ");
+    var randId = Math.floor(Math.random() * maximArray.length);
+    var maximId = maximArray.slice(randId - 1, randId + 1).join("-");
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/maxim/').send({ maxim: maxim, challenge: challenge, maximId: maximId });
   },
 
   postUser: function postUser(username, email, password) {
@@ -11676,12 +11678,6 @@ var Archive = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'archive-link-container' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'archive-number' },
-              maxim.maximId,
-              '.'
-            ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Maxim__["a" /* default */], { link: 'maxim/' + maxim.maximId, quote: maxim.maxim })
           )
         );
@@ -12035,10 +12031,6 @@ var Console = function (_React$Component) {
       _this.setState({ challenge: e.target.value });
     };
 
-    _this.handleIdChange = function (e) {
-      _this.setState({ maximId: e.target.value });
-    };
-
     _this.postMaxim = function (e) {
       e.preventDefault();
       __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].postMaxim(_this.state.maxim, _this.state.challenge, _this.state.maximId).end(function (err, res) {
@@ -12064,42 +12056,34 @@ var Console = function (_React$Component) {
           'div',
           { className: 'row' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col-8 offset-2 console-header' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h2',
-              null,
-              'Welcome to the Admin Console'
-            )
+            'h2',
+            null,
+            'Welcome to the Admin Console'
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'row' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'col-8 offset-2' },
+            'form',
+            { id: 'console-form', className: 'console-form', onSubmit: this.postMaxim },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'form',
-              { id: 'console-form', onSubmit: this.postMaxim },
+              'fieldset',
+              null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'fieldset',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'label',
-                  { htmlFor: 'post-maxim', className: 'console-label' },
-                  'Post a New Maxim'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-maxim', className: 'console-textarea', onChange: this.handleMaximChange }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'label',
-                  { htmlFor: 'post-challenge', className: 'console-label' },
-                  'Post a New Challenge'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-challenge', className: 'console-textarea', onChange: this.handleChallengeChange })
+                'label',
+                { htmlFor: 'post-maxim', className: 'console-label' },
+                'Post a New Maxim'
               ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'console-submit', value: 'Post' })
-            )
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-maxim', className: 'console-textarea', required: true, onChange: this.handleMaximChange }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                { htmlFor: 'post-challenge', className: 'console-label' },
+                'Post a New Challenge'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-challenge', className: 'console-textarea', required: true, onChange: this.handleChallengeChange })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'console-submit', value: 'Post' })
           )
         )
       );
@@ -12685,7 +12669,7 @@ exports = module.exports = __webpack_require__(65)();
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container {\n  margin-bottom: 60px;\n}\n\n.about-content, .maxim-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0 auto;\n  display: inline-block;\n}\n\n.maxim {\n  text-align: center;\n}\n\n.maxim-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  padding: 10px 0px;\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n}\n\n.archive-number {\n  position: relative;\n  top: 50%;\n  transform: translateY(-25%);\n  display: inline-block;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.login-button, .experience-button, .register-button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container {\n  margin-bottom: 60px;\n}\n\n.about-content, .maxim-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0 auto;\n  display: inline-block;\n}\n\n.maxim {\n  text-align: center;\n}\n\n.maxim-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  padding: 10px 0px;\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n}\n\n.archive-number {\n  position: relative;\n  top: 50%;\n  transform: translateY(-25%);\n  display: inline-block;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.login-button, .experience-button, .register-button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
 
 // exports
 
