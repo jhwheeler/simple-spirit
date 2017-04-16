@@ -40,8 +40,12 @@ p {
   font-size: 20px;
   text-align: center;
   color: #292526;
-  margin: 0 auto;
+  margin: 0px 35px 0px 35px;
   display: inline-block;
+}
+
+.challenge-content a {
+  text-decoration: none;
 }
 
 .maxim {
@@ -81,6 +85,13 @@ p {
   margin: 20px;
   line-height: 30px;
   text-align: center;
+}
+
+.explanation {
+  font-size: 12px;
+  text-decoration: none;
+  color: #292526;
+  margin-top: 20px;
 }
 
 .experience-recording {
