@@ -32,8 +32,8 @@ p {
   height: 100px;
 }
 
-.content-container {
-  margin-bottom: 60px;
+.content-container, .about, .archive {
+  margin-bottom: 100px;
 }
 
 .about-content, .maxim-content, .challenge-content {

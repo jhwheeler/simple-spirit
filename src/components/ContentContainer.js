@@ -43,8 +43,10 @@ class ContentContainer extends React.Component {
     let renderedContent = null;
     if (this.state.content == "challenge") {
       renderedContent = <Challenge content={this.state.maxim.challenge}/>;
+      prompt = <Link to="/about"><Prompt prompt={this.state.prompt} onClick={this.changeContent}/></Link>;
     } else {
       renderedContent = null;
+      prompt = <Prompt prompt={this.state.prompt} onClick={this.changeContent}/>;
     }
       return (
         <div className="content-container col-12">
@@ -53,7 +55,7 @@ class ContentContainer extends React.Component {
             {renderedContent}
           </div>
           <div className="row">
-            <Prompt prompt={this.state.prompt} onClick={this.changeContent}/>
+            {prompt}
           </div>
         </div>
       );
