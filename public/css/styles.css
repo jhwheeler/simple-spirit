@@ -44,6 +44,10 @@ p {
   display: inline-block;
 }
 
+.about-content p {
+  margin-bottom: 10px;
+}
+
 .challenge-content a {
   text-decoration: none;
 }
