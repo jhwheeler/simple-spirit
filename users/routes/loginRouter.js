@@ -43,7 +43,7 @@ loginRouter.post('/', (req, res, next) => {
       delete data.password;
       req.shiva.user = data;
       console.log(data);
-      res.redirect('/#/console');
+      res.redirect('/console');
     })
     .catch(
       err => {

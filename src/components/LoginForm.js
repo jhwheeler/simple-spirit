@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   render() {
+    const queryParams = window.location.search.split("?");
+    let errorMessage;
+    console.log(queryParams.length);
+    if (queryParams.length > 1) {
+      errorMessage =
+        (<div className="error-message">
+          {decodeURI(queryParams[1])}
+        </div>)
+    } else {
+      errorMessage = null;
+    }
     return(
       <form action="/login" method="post" id="login" className="login">
         <fieldset name="login-info">
@@ -15,6 +26,7 @@ class LoginForm extends React.Component {
             <input className="pass-input" type="password" name="password" placeholder="pass" id="password"/>
         </fieldset>
         <input type="submit" className="button" value="open"/>
+        {errorMessage}
       </form>
     );
   }

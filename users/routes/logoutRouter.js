@@ -5,7 +5,7 @@ const logoutRouter = express.Router();
 const {User} = require('../models');
 
 logoutRouter.get('/', (req, res, next) => {
-  delete req.headers.cookie;
+  req.shiva.reset();
   res.redirect('/');
 });
 

@@ -10,11 +10,11 @@ class Archive extends React.Component {
   constructor() {
     super();
     this.state = {
-      maxims: []
+      maxims: null
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const maxims = [];
     api.getMaxims().end((error, res) => {
       this.setState({maxims: res.body})
@@ -22,15 +22,19 @@ class Archive extends React.Component {
   }
 
   render() {
-    let archive = this.state.maxims.map((maxim) => (
-      <div key={maxim.maximId} className="archive-item">
-        <div className="archive-link-container">
-            <Maxim link={`maxim/${maxim.maximId}`} quote={maxim.maxim} />
-          </div>
-      </div>
-    ));
+    let archive;
 
-    if (this.state.maxims.length < 1) {
+    if (this.state.maxims !== null) {
+      archive = this.state.maxims.map((maxim) => (
+        <div key={maxim.maximId} className="archive-item">
+          <div className="archive-link-container">
+              <Maxim link={`maxim/${maxim.maximId}`} quote={maxim.maxim} />
+            </div>
+        </div>
+      ));
+    }
+
+    if ((this.state.maxims !== null) && (this.state.maxims.length < 1)) {
       archive = <p>No maxims available.</p>
     }
 

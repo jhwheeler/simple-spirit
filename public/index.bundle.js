@@ -11672,14 +11672,14 @@ var Archive = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Archive.__proto__ || Object.getPrototypeOf(Archive)).call(this));
 
     _this.state = {
-      maxims: []
+      maxims: null
     };
     return _this;
   }
 
   _createClass(Archive, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
       var _this2 = this;
 
       var maxims = [];
@@ -11690,19 +11690,23 @@ var Archive = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var archive = this.state.maxims.map(function (maxim) {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { key: maxim.maximId, className: 'archive-item' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'archive-link-container' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Maxim__["a" /* default */], { link: 'maxim/' + maxim.maximId, quote: maxim.maxim })
-          )
-        );
-      });
+      var archive = void 0;
 
-      if (this.state.maxims.length < 1) {
+      if (this.state.maxims !== null) {
+        archive = this.state.maxims.map(function (maxim) {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { key: maxim.maximId, className: 'archive-item' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'archive-link-container' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Maxim__["a" /* default */], { link: 'maxim/' + maxim.maximId, quote: maxim.maxim })
+            )
+          );
+        });
+      }
+
+      if (this.state.maxims !== null && this.state.maxims.length < 1) {
         archive = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'p',
           null,
@@ -12267,6 +12271,18 @@ var LoginForm = function (_React$Component) {
   _createClass(LoginForm, [{
     key: 'render',
     value: function render() {
+      var queryParams = window.location.search.split("?");
+      var errorMessage = void 0;
+      console.log(queryParams.length);
+      if (queryParams.length > 1) {
+        errorMessage = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'error-message' },
+          decodeURI(queryParams[1])
+        );
+      } else {
+        errorMessage = null;
+      }
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'form',
         { action: '/login', method: 'post', id: 'login', className: 'login' },
@@ -12289,7 +12305,8 @@ var LoginForm = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'pass-input', type: 'password', name: 'password', placeholder: 'pass', id: 'password' })
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'open' })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'open' }),
+        errorMessage
       );
     }
   }]);

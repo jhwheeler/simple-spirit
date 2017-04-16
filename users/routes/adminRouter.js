@@ -5,17 +5,21 @@ const adminRouter = express.Router();
 const {User} = require('../models');
 
 adminRouter.get('/', (req, res, next) => {
-  User
-    .findOne({username: req.shiva.user.username})
-    .exec()
-    .then(data => {
-      if (!data || data.role != "admin") {
-        req.shiva.reset();
-        res.redirect('/#/login');
-      } else {
-        res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'index.html'))
-      }
-    })
+  if (req.shiva.user) {
+    User
+      .findOne({username: req.shiva.user.username})
+      .exec()
+      .then(data => {
+        if (!data || data.role != "admin") {
+          req.shiva.reset();
+          res.redirect('/login?You must be an admin.');
+        } else {
+          res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'index.html'))
+        }
+      })
+  } else {
+    res.redirect('/login');
+  }
 });
 
 module.exports = {adminRouter};
