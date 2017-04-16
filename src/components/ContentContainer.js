@@ -3,6 +3,7 @@ import Maxim from './Maxim';
 import Challenge from './Challenge';
 import Prompt from './Prompt';
 import api from '../api';
+import {Link} from 'react-router-dom';
 
 class ContentContainer extends React.Component {
   constructor() {
@@ -22,7 +23,7 @@ class ContentContainer extends React.Component {
       content: content == "challenge" ? "maxim" : "challenge"
     });
     this.setState({
-      prompt: content == "maxim" ? "back" : "make it real"
+      prompt: content == "maxim" ? "What is this?" : "make it real"
     });
   }
 

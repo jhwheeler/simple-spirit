@@ -9,9 +9,6 @@ class Challenge extends React.Component {
           <div className="challenge-content">
             <h3>Challenge:</h3>
             <p>{this.props.content}</p>
-            <Link to="/about">
-              <p className="explanation">What is this?</p>
-            </Link>
           </div>
         </div>
       </div>
