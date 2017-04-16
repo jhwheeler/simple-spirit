@@ -80,7 +80,7 @@ router.post('/api/maxim', (req, res) => {
 });
 
 router.put('/api/maxim/:maximId', (req, res) => {
-  if (!(req.params.maximId && req.body.maximId && parseInt(req.params.maximId) === req.body.maximId)) {
+  if (!(req.params.maximId && req.body.maximId && (req.params.maximId === req.body.maximId))) {
     const message = (
       `Request path id (${req.params.maximId}) and request body id ` +
       `(${req.body.maximId}) must match`);
