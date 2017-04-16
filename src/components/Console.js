@@ -1,5 +1,6 @@
 import React from 'react';
 import api from '../api';
+import { Link } from 'react-router-dom';
 
 class Console extends React.Component {
   constructor() {
@@ -39,7 +40,10 @@ class Console extends React.Component {
               <label htmlFor="post-challenge" className="console-label">Post a New Challenge</label>
               <textarea name="post-challenge" className="console-textarea" required onChange={this.handleChallengeChange}></textarea>
             </fieldset>
-            <input type="submit" className="console-submit" value="Post"/>
+            <input type="submit" className="button" value="Post"/>
+            <Link to="/logout" className="logout">
+              <p>Logout</p>
+            </Link>
           </form>
         </div>
       </div>

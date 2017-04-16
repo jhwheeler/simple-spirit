@@ -141,7 +141,7 @@ fieldset {
   text-decoration: none;
 }
 
-.login-button, .experience-button, .register-button {
+.button {
   width: 180px;
   height: 40px;
   background-color: #1e1e1e;
@@ -232,6 +232,12 @@ fieldset {
   font-size: 14px;
   border: none;
   margin: 20px 0px;
+}
+
+.logout {
+  font-size: 12px;
+  text-decoration: none;
+  color: #292526;
 }
 
 /* Utility classes */

@@ -11659,8 +11659,8 @@ var Archive = function (_React$Component) {
   }
 
   _createClass(Archive, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
       var _this2 = this;
 
       var maxims = [];
@@ -11683,7 +11683,7 @@ var Archive = function (_React$Component) {
         );
       });
 
-      if (archive.length < 1) {
+      if (this.state.maxims.length < 1) {
         archive = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'p',
           null,
@@ -12015,6 +12015,7 @@ var Challenge = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(16);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12022,6 +12023,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -12094,7 +12096,16 @@ var Console = function (_React$Component) {
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-challenge', className: 'console-textarea', required: true, onChange: this.handleChallengeChange })
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'console-submit', value: 'Post' })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'Post' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Link */],
+              { to: '/logout', className: 'logout' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                null,
+                'Logout'
+              )
+            )
           )
         )
       );
@@ -12260,7 +12271,7 @@ var LoginForm = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'pass-input', type: 'password', name: 'password', placeholder: 'pass', id: 'password' })
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'login-button', value: 'open' })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'open' })
       );
     }
   }]);
@@ -12414,7 +12425,7 @@ var RegisterForm = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'pass-input', type: 'password', name: 'password', placeholder: 'password', id: 'password', onChange: this.handlePasswordChange })
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'register-button', value: 'create' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'create' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
           { to: '/login' },
@@ -12680,7 +12691,7 @@ exports = module.exports = __webpack_require__(65)();
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container {\n  margin-bottom: 60px;\n}\n\n.about-content, .maxim-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0px 35px 0px 35px;\n  display: inline-block;\n}\n\n.challenge-content a {\n  text-decoration: none;\n}\n\n.maxim {\n  text-align: center;\n}\n\n.maxim-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.explanation {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n  margin-top: 20px;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n  padding: 28px 0px 7px 0px;\n  border-bottom: 1px solid gray;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.login-button, .experience-button, .register-button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container {\n  margin-bottom: 60px;\n}\n\n.about-content, .maxim-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0px 35px 0px 35px;\n  display: inline-block;\n}\n\n.challenge-content a {\n  text-decoration: none;\n}\n\n.maxim {\n  text-align: center;\n}\n\n.maxim-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.explanation {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n  margin-top: 20px;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n  padding: 28px 0px 7px 0px;\n  border-bottom: 1px solid gray;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n.logout {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n}\n\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
 
 // exports
 

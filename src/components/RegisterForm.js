@@ -47,7 +47,7 @@ class RegisterForm extends React.Component {
             <br/>
             <input className="pass-input" type="password" name="password" placeholder="password" id="password" onChange={this.handlePasswordChange}/>
         </fieldset>
-        <input type="submit" className="register-button" value="create"/>
+        <input type="submit" className="button" value="create"/>
         <Link to="/login"><p className="already-user">Already a user? Login</p></Link>
       </form>
     );

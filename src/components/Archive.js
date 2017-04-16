@@ -14,7 +14,7 @@ class Archive extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const maxims = [];
     api.getMaxims().end((error, res) => {
       this.setState({maxims: res.body})
@@ -30,7 +30,7 @@ class Archive extends React.Component {
       </div>
     ));
 
-    if (archive.length < 1) {
+    if (this.state.maxims.length < 1) {
       archive = <p>No maxims available.</p>
     }
 

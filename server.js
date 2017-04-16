@@ -7,6 +7,7 @@ const express = require('express'),
 const {adminRouter} = require('./users/routes/adminRouter'),
       {loginRouter} = require('./users/routes/loginRouter'),
       {registerRouter} = require('./users/routes/registerRouter'),
+      {logoutRouter} = require('./users/routes/logoutRouter'),
       {PORT, DATABASE_URL} = require('./config'),
       {router} = require('./router');
 
@@ -30,6 +31,7 @@ app.use(sessions({
 app.use('/api/users/', registerRouter);
 app.use('/login', loginRouter);
 app.use('/console', adminRouter);
+app.use('/logout', logoutRouter);
 app.use('/', router);
 
 
