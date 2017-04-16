@@ -11,7 +11,7 @@ adminRouter.get('/', (req, res, next) => {
     .then(data => {
       if (!data || data.role != "admin") {
         req.shiva.reset();
-        res.redirect('/login');
+        res.redirect('/#/login');
       } else {
         res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'index.html'))
       }

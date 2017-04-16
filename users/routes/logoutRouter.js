@@ -1,14 +1,12 @@
-const express = require('express');
+const express = require('express'),
+      session = require('client-sessions');;
 
 const logoutRouter = express.Router();
 const {User} = require('../models');
 
 logoutRouter.get('/', (req, res, next) => {
-  console.log(req);
-  req.shiva.reset();
-  console.log("after reset");
-  console.log(req);
-  res.redirect('/asdf');
+  delete req.headers.cookie;
+  res.redirect('/');
 });
 
 module.exports = {logoutRouter};
