@@ -16,7 +16,7 @@ const api = {
   postMaxim: (maxim, challenge) => {
       const maximArray = maxim.split(" ");
       const randId = Math.floor(Math.random() * maximArray.length);
-      const maximId = maximArray.slice((randId - 1), (randId + 1)).join("-");
+      const maximId = maximArray.slice((randId - 2), (randId + 3)).join("-");
     return superagent
       .post('/api/maxim/')
       .send({maxim: maxim, challenge: challenge, maximId: maximId});

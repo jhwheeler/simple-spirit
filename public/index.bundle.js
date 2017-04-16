@@ -3840,7 +3840,7 @@ var api = {
   postMaxim: function postMaxim(maxim, challenge) {
     var maximArray = maxim.split(" ");
     var randId = Math.floor(Math.random() * maximArray.length);
-    var maximId = maximArray.slice(randId - 1, randId + 1).join("-");
+    var maximId = maximArray.slice(randId - 2, randId + 3).join("-");
     return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/maxim/').send({ maxim: maxim, challenge: challenge, maximId: maximId });
   },
 
