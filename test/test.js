@@ -24,7 +24,7 @@ function seedMaxims() {
 
 function generateMaxim() {
   return {
-    maximId: faker.random.number(),
+    maximId: faker.lorem.words(),
     maxim: faker.lorem.words(),
     challenge: faker.lorem.words(),
     date: Date.now()
