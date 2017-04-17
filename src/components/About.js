@@ -18,7 +18,8 @@ class About extends React.Component {
             <br/>
             <p>This space is here to help you listen to the silence. To help you connect with the beautifuly simplicity of Spirit.</p>
             <p>Read a maxim and let it sink in. Repeat it a few times and just be with the sounds.</p>
-            <p>If you feel up for a challenge, click on "make it real". A challenge will appear to guide you to putting this wisdom into action. Throughout the day, try this practice and see what arises...</p>
+            <p>If you feel up for a challenge, click on "make it real". A challenge will appear to guide you to putting this wisdom into action.</p>
+            <p>Throughout the day, try this practice and see what arises...</p>
             <Link to="/archive">
               <button className="button">Explore</button>
             </Link>
