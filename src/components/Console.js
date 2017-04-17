@@ -41,7 +41,8 @@ class Console extends React.Component {
               <textarea name="post-challenge" className="console-textarea" required onChange={this.handleChallengeChange}></textarea>
             </fieldset>
             <input type="submit" className="button" value="Post"/>
-            <a href="/logout"><p>Logout</p></a>
+            <br/>
+            <a className="logout-link" href="/logout"><p>Logout</p></a>
           </form>
         </div>
       </div>

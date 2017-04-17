@@ -243,10 +243,14 @@ fieldset {
   margin: 20px 0px;
 }
 
-.logout {
-  font-size: 12px;
+.logout-link {
+  font-size: 14px;
   text-decoration: none;
   color: #292526;
+}
+
+.logout-link p {
+  display: inline-block;
 }
 
 /*
