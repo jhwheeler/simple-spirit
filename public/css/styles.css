@@ -32,7 +32,7 @@ p {
   height: 100px;
 }
 
-.content-container, .about, .archive {
+.content-container, .about, .archive, .console {
   margin-bottom: 100px;
 }
 
@@ -215,6 +215,12 @@ fieldset {
   margin: 10px 0px;;
   resize: none;
   outline: none;
+}
+
+@media only screen and (max-width: 639px) {
+  .console-textarea {
+    width: 80%;
+  }
 }
 
 .console-label {
