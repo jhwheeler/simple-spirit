@@ -1,0 +1,8 @@
+{"_id":{"$oid":"58ed4c8f0757171cca07e304"},"username":"alacritas","password":"$2a$10$pHZFC89vJTF41KBIr6t4f.NSYwEehyyJFLzeUERHOJRR9kRCilFDi","role":"admin","email":"jhwheeler@gmail.com","__v":0}
+{"_id":{"$oid":"58ed4d4b0e6e10222f78c329"},"username":"jackson","password":"$2a$10$MnZ///cmtTB4mAg8iQksMeLeV.PqQKBZjQVmluCbiwQ6u2KjxTetO","role":"admin","email":"jhwheeler7@gmail.com","__v":0}
+{"_id":{"$oid":"58ed50c5a6f1592a9cf0e6c6"},"username":"raya","password":"$2a$10$wVLtbRwkPNMWt0zVeqQb1u2Ug1A1zU6qeeckpxK.Rrj7a.kpGqP.K","role":"admin","email":"raya@example.com","__v":0}
+{"_id":{"$oid":"58ed57b7a6f1592a9cf0e6c8"},"username":"john","password":"$2a$10$E8Qh96Yo3MOBfWBIJh7ZluWa9/uc8F028zwDcAN5r5l5kVblRCIMu","role":"admin","email":"john@example.com","__v":0}
+{"_id":{"$oid":"58ed57e3a6f1592a9cf0e6c9"},"username":"love","password":"$2a$10$t4EI1wlbHoNoeOkG.FxVwO5CLr9AwXm2jx3px2moFayd2G/sqy11y","role":"admin","email":"love@example.com","__v":0}
+{"_id":{"$oid":"58ee9e26786c061908d572d4"},"username":"patrick","password":"$2a$10$m8bejtJ5UB5kGtfZx3gxS.gDNJTWK6XzJkhFQqbfnxNKCpWy4.S/q","role":"user","email":"patrick@example.com","__v":0}
+{"_id":{"$oid":"58efbc595abb03448ed0ec13"},"username":"ateev","password":"$2a$10$uf9MZwPodvnv2ZRh4/wkROQWvsT7Zz20A7eIgA8ro2wi/EpzVr15G","role":"admin","email":"ateev@example.com","__v":0}
+{"_id":{"$oid":"58f3b74d79258e2f7e3c1c9e"},"username":"newton","password":"$2a$10$za8q59m4PP056/Ee3e.EJ.53QQE8mttSGSlNd.qOP/.5tN5U2QPUa","role":"user","email":"newton@example.com","__v":0}

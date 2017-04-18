@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  simple-node:
+    container_name: simple-node
+    hostname: simple-node
+    restart: always
+
+    build:
+      context: context/simple-spirit
+    ports:
+      - "8723:8723"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: simple-mongo
+
