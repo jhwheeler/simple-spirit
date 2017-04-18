@@ -21,6 +21,15 @@ p {
   margin: 0;
 }
 
+hr {
+    border: 0;
+    width: 80px;
+    margin-top: 10px;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 .header {
   padding: 30px;
   margin-bottom: 30px;
@@ -120,7 +129,6 @@ h2, h3 {
   text-decoration: none;
   display: inline-block;
   padding: 28px 0px 7px 0px;
-  border-bottom: 1px solid gray;
 }
 
 .login, .register {

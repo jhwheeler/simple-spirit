@@ -29,7 +29,8 @@ class Archive extends React.Component {
         <div key={maxim.maximId} className="archive-item">
           <div className="archive-link-container">
               <Maxim link={`maxim/${maxim.maximId}`} quote={maxim.maxim} />
-            </div>
+              <hr/>
+          </div>
         </div>
       ));
     }
