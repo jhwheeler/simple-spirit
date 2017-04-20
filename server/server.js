@@ -19,7 +19,8 @@ app.use(require('express-status-monitor')());
 
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
+app.use(express.static('../front/public'));
+app.use(express.static(path.join(__dirname, '../front/public')))
 
 app.use(sessions({
   cookieName: 'shiva',
@@ -34,10 +35,8 @@ app.use('/console', adminRouter);
 app.use('/logout', logoutRouter);
 app.use('/', router);
 
-
 app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId'], (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
-
+  res.sendFile(path.resolve(__dirname, '../front/public', 'index.html'))});
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
 

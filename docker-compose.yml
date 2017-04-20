@@ -7,7 +7,7 @@ services:
     restart: always
 
     build:
-      context: context/simple-spirit
+      context: front
     ports:
       - "8723:8723"
     depends_on:
