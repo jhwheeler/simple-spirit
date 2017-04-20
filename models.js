@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const maximSchema = mongoose.Schema({
-  maximId: {type: String, required: true},
-  maxim: {type: String, required: true},
+const koanSchema = mongoose.Schema({
+  koanId: {type: String, required: true},
+  koan: {type: String, required: true},
   challenge: {type: String, required: true},
   date: Date
 });
 
-const Maxim = mongoose.model('Maxim', maximSchema);
+const Koan = mongoose.model('Koan', koanSchema);
 
-module.exports = {Maxim};
+module.exports = {Koan};

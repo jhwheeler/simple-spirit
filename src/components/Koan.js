@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Maxim extends React.Component {
+class Koan extends React.Component {
   render() {
     if (this.props.link) {
       return (
-        <div className="maxim">
-          <div className="maxim-content">
+        <div className="koan">
+          <div className="koan-content">
             <Link to={this.props.link}>
               <p>{this.props.quote}</p>
             </Link>
@@ -15,8 +15,8 @@ class Maxim extends React.Component {
       );
     } else {
         return (
-          <div className="maxim">
-            <div className="maxim-content">
+          <div className="koan">
+            <div className="koan-content">
               <p>{this.props.quote}</p>
             </div>
           </div>
@@ -25,4 +25,4 @@ class Maxim extends React.Component {
   }
 }
 
-export default Maxim;
+export default Koan;

@@ -21,7 +21,7 @@ const Root = () => {
         <Route path="/register" component={RegisterScreen} />
         <Route path="/archive" component={Archive} />
         <Route path="/about" component={About} />
-        <Route path="/maxim/:maximId" component={App} />
+        <Route path="/koan/:koanId" component={App} />
         <Route path="/console" component={ConsoleScreen} />
       </Switch>
     </Router>

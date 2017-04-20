@@ -6,16 +6,16 @@ import ContentContainer from './ContentContainer';
 class App extends React.Component {
   render() {
 
-  let maximId;
+  let koanId;
 
   if (this.props.match && this.props.match.params) {
-    maximId = this.props.match.params.maximId;
+    koanId = this.props.match.params.koanId;
   }
 
     return (
       <div className="main row">
         <Header/>
-        <ContentContainer maximId={maximId}/>
+        <ContentContainer koanId={koanId}/>
         <Menu/>
       </div>
     );

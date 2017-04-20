@@ -45,7 +45,7 @@ hr {
   margin-bottom: 100px;
 }
 
-.about-content, .maxim-content, .challenge-content {
+.about-content, .koan-content, .challenge-content {
   font-size: 20px;
   text-align: center;
   color: #292526;
@@ -60,11 +60,11 @@ hr {
   text-decoration: none;
 }
 
-.maxim {
+.koan {
   text-align: center;
 }
 
-.maxim-content a {
+.koan-content a {
   text-decoration: none;
   color: #292526;
   margin: 10px 0px;

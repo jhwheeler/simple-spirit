@@ -35,7 +35,7 @@ app.use('/logout', logoutRouter);
 app.use('/', router);
 
 
-app.get(['/login', '/register', '/about', '/archive', '/maxim/:maximId'], (req, res) => {
+app.get(['/login', '/register', '/about', '/archive', '/koan/:koanId'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
 
 

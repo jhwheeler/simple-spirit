@@ -1,9 +1,9 @@
 # User Flows for MVP
 
 
-## Daily Maxim Screen
+## Daily Koan Screen
 
-1. Click/tap on maxim
+1. Click/tap on koan
 
 2. Scroll down
 
@@ -28,7 +28,7 @@
 
 ---
 * 1 & 2 > Experience Recording Screen
-* 3 > Daily Maxim Screen
+* 3 > Daily Koan Screen
 * 4 > Login Screen
 
 

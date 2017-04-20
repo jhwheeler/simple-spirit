@@ -2,7 +2,7 @@ import React from 'react';
 import api from '../api';
 
 import Header from './Header';
-import Maxim from './Maxim';
+import Koan from './Koan';
 import {Link} from 'react-router-dom';
 import Menu from './Menu';
 
@@ -10,33 +10,33 @@ class Archive extends React.Component {
   constructor() {
     super();
     this.state = {
-      maxims: null
+      koans: null
     }
   }
 
   componentDidMount() {
-    const maxims = [];
-    api.getMaxims().end((error, res) => {
-      this.setState({maxims: res.body})
+    const koans = [];
+    api.getKoans().end((error, res) => {
+      this.setState({koans: res.body})
     });
   }
 
   render() {
     let archive;
 
-    if (this.state.maxims !== null) {
-      archive = this.state.maxims.map((maxim) => (
-        <div key={maxim.maximId} className="archive-item">
+    if (this.state.koans !== null) {
+      archive = this.state.koans.map((koan) => (
+        <div key={koan.koanId} className="archive-item">
           <div className="archive-link-container">
-              <Maxim link={`maxim/${maxim.maximId}`} quote={maxim.maxim} />
+              <Koan link={`koan/${koan.koanId}`} quote={koan.koan} />
               <hr/>
           </div>
         </div>
       ));
     }
 
-    if ((this.state.maxims !== null) && (this.state.maxims.length < 1)) {
-      archive = <p>No maxims available.</p>
+    if ((this.state.koans !== null) && (this.state.koans.length < 1)) {
+      archive = <p>No koans available.</p>
     }
 
     return (

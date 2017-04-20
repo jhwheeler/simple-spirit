@@ -1,25 +1,25 @@
 import superagent from 'superagent';
 
 const api = {
-  getMaxims: () => {
-    return superagent.get('/api/maxims');
+  getKoans: () => {
+    return superagent.get('/api/koans');
   },
 
-  getMaximById: (maximId) => {
-    return superagent.get(`/api/maxim/${maximId}`);
+  getKoanById: (koanId) => {
+    return superagent.get(`/api/koan/${koanId}`);
   },
 
-  getLatestMaxim: () => {
-    return superagent.get('/api/maxim');
+  getLatestKoan: () => {
+    return superagent.get('/api/koan');
   },
 
-  postMaxim: (maxim, challenge) => {
-      const maximArray = maxim.split(" ");
-      const randId = Math.floor(Math.random() * maximArray.length);
-      const maximId = maximArray.slice((randId - 2), (randId + 3)).join("-");
+  postKoan: (koan, challenge) => {
+      const koanArray = koan.split(" ");
+      const randId = Math.floor(Math.random() * koanArray.length);
+      const koanId = koanArray.slice((randId - 2), (randId + 3)).join("-");
     return superagent
-      .post('/api/maxim/')
-      .send({maxim: maxim, challenge: challenge, maximId: maximId});
+      .post('/api/koan/')
+      .send({koan: koan, challenge: challenge, koanId: koanId});
   },
 
   postUser: (username, email, password) => {

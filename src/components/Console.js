@@ -7,23 +7,23 @@ class Console extends React.Component {
     super();
 
     this.state = {
-      maxim: "",
+      koan: "",
       challenge: "",
-      maximId: null
+      koanId: null
     }
   }
 
-  handleMaximChange = (e) => {
-    this.setState({maxim: e.target.value});
+  handleKoanChange = (e) => {
+    this.setState({koan: e.target.value});
   }
 
   handleChallengeChange = (e) => {
     this.setState({challenge: e.target.value});
   }
 
-  postMaxim = (e) => {
+  postKoan = (e) => {
     e.preventDefault();
-    api.postMaxim(this.state.maxim, this.state.challenge, this.state.maximId).end((err, res) => {console.log("Posting Maxim/Challenge")});
+    api.postKoan(this.state.koan, this.state.challenge, this.state.koanId).end((err, res) => {console.log("Posting Koan/Challenge")});
   }
 
   render() {
@@ -33,10 +33,10 @@ class Console extends React.Component {
           <h2>Welcome to the Admin Console</h2>
         </div>
         <div className="row">
-          <form id="console-form" className="console-form" onSubmit={this.postMaxim}>
+          <form id="console-form" className="console-form" onSubmit={this.postKoan}>
             <fieldset>
-              <label htmlFor="post-maxim" className="console-label">Post a New Maxim</label>
-              <textarea name="post-maxim" className="console-textarea" required onChange={this.handleMaximChange}></textarea>
+              <label htmlFor="post-koan" className="console-label">Post a New Koan</label>
+              <textarea name="post-koan" className="console-textarea" required onChange={this.handleKoanChange}></textarea>
               <label htmlFor="post-challenge" className="console-label">Post a New Challenge</label>
               <textarea name="post-challenge" className="console-textarea" required onChange={this.handleChallengeChange}></textarea>
             </fieldset>

@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 const faker = require('faker');
 const mongoose = require('mongoose');
 
-const {Maxim} = require('../models');
+const {Koan} = require('../models');
 const {app, runServer, closeServer} = require('../server');
 const {TEST_DATABASE_URL} = require('../config');
 
@@ -11,21 +11,21 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
-function seedMaxims() {
-  console.info('seeding maxims');
+function seedKoans() {
+  console.info('seeding koans');
   const seedData = [];
 
   for (let i=1; i<=10; i++) {
-    seedData.push(generateMaxim());
+    seedData.push(generateKoan());
   }
 
-  return Maxim.insertMany(seedData);
+  return Koan.insertMany(seedData);
 }
 
-function generateMaxim() {
+function generateKoan() {
   return {
-    maximId: faker.lorem.words(),
-    maxim: faker.lorem.words(),
+    koanId: faker.lorem.words(),
+    koan: faker.lorem.words(),
     challenge: faker.lorem.words(),
     date: Date.now()
   }
@@ -52,7 +52,7 @@ describe('API calls', function() {
     });
 
     beforeEach(function() {
-        return seedMaxims();
+        return seedKoans();
     });
 
     afterEach(function() {
@@ -65,32 +65,32 @@ describe('API calls', function() {
 
   describe('GET endpoint', function() {
 
-    it('should get all maxims', function() {
+    it('should get all koans', function() {
       return chai.request(app)
-        .get('/api/maxims')
+        .get('/api/koans')
         .then(function(res) {
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
         });
     });
 
-    it('should get latest maxim', function() {
+    it('should get latest koan', function() {
       return chai.request(app)
-        .get('/api/maxim')
+        .get('/api/koan')
         .then(function(res) {
           res.should.have.status(200);
           res.body.should.have.length.of.at.least(1);
         });
     });
 
-    it('should get a maxim by id', function() {
-      Maxim
+    it('should get a koan by id', function() {
+      Koan
         .findOne()
         .exec()
-        .then((randomMaxim) => {
-          const randId = randomMaxim.maximId;
+        .then((randomKoan) => {
+          const randId = randomKoan.koanId;
           return chai.request(app)
-            .get(`/api/maxim/${randId}`)
+            .get(`/api/koan/${randId}`)
             .then(function(res) {
               res.should.have.status(200);
               res.body.should.have.length.of.at.least(1);
@@ -101,26 +101,26 @@ describe('API calls', function() {
 
   describe('POST endpoint', function() {
 
-    it('should post a maxim', function() {
-      const newMaxim = generateMaxim();
+    it('should post a koan', function() {
+      const newKoan = generateKoan();
       return chai.request(app)
-        .post('/api/maxim')
-        .send(newMaxim)
+        .post('/api/koan')
+        .send(newKoan)
         .then(function(res) {
           res.should.have.status(200);
           res.should.be.json;
           res.body.should.be.an('object');
           res.body.should.include.keys(
-              'maximId', 'maxim', 'challenge', 'date');
-          res.body.maxim.should.equal(newMaxim.maxim);
-          res.body.maximId.should.not.be.null;
-          res.body.challenge.should.equal(newMaxim.challenge);
+              'koanId', 'koan', 'challenge', 'date');
+          res.body.koan.should.equal(newKoan.koan);
+          res.body.koanId.should.not.be.null;
+          res.body.challenge.should.equal(newKoan.challenge);
 
-          return Maxim.findOne({maximId: res.body.maximId});
+          return Koan.findOne({koanId: res.body.koanId});
       })
-      .then(function(maxim) {
-          maxim.maxim.should.equal(newMaxim.maxim);
-          maxim.challenge.should.equal(newMaxim.challenge);
+      .then(function(koan) {
+          koan.koan.should.equal(newKoan.koan);
+          koan.challenge.should.equal(newKoan.challenge);
       });
     });
   });
@@ -129,50 +129,50 @@ describe('API calls', function() {
 
     it('should update fields you send', function() {
       const updateData = {
-        maxim: 'The best maxim ever',
+        koan: 'The best koan ever',
         challenge: 'Make it happen. You can do it!'
       };
 
-      return Maxim
+      return Koan
         .findOne()
         .exec()
-        .then(function(maxim) {
-          updateData.maximId = maxim.maximId;
+        .then(function(koan) {
+          updateData.koanId = koan.koanId;
 
           return chai.request(app)
-            .put(`/api/maxim/${maxim.maximId}`)
+            .put(`/api/koan/${koan.koanId}`)
             .send(updateData);
         })
         .then(function(res) {
           res.should.have.status(200);
 
-          return Maxim.findOne({maximId: updateData.maximId}).exec();
+          return Koan.findOne({koanId: updateData.koanId}).exec();
         })
-        .then(function(maxim) {
-          maxim.maxim.should.equal(updateData.maxim);
-          maxim.challenge.should.equal(updateData.challenge);
+        .then(function(koan) {
+          koan.koan.should.equal(updateData.koan);
+          koan.challenge.should.equal(updateData.challenge);
         });
     })
   })
 
   describe('DELETE endpoint', function() {
 
-    it('should delete selected maxim', function() {
-      let maxim;
+    it('should delete selected koan', function() {
+      let koan;
 
-      return Maxim
+      return Koan
         .findOne()
         .exec()
-        .then(function(_maxim) {
-          maxim = _maxim;
-          return chai.request(app).delete(`/api/maxim/${maxim.maximId}`);
+        .then(function(_koan) {
+          koan = _koan;
+          return chai.request(app).delete(`/api/koan/${koan.koanId}`);
         })
         .then(function(res) {
           res.should.have.status(204);
-          return Maxim.findOne({maximId: maxim.maximId}).exec();
+          return Koan.findOne({koanId: koan.koanId}).exec();
         })
-        .then(function(_maxim) {
-          should.not.exist(_maxim)
+        .then(function(_koan) {
+          should.not.exist(_koan)
         });
     });
   });

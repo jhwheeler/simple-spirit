@@ -3825,23 +3825,23 @@ module.exports = SyntheticUIEvent;
 
 
 var api = {
-  getMaxims: function getMaxims() {
-    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/maxims');
+  getKoans: function getKoans() {
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/koans');
   },
 
-  getMaximById: function getMaximById(maximId) {
-    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/maxim/' + maximId);
+  getKoanById: function getKoanById(koanId) {
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/koan/' + koanId);
   },
 
-  getLatestMaxim: function getLatestMaxim() {
-    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/maxim');
+  getLatestKoan: function getLatestKoan() {
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/koan');
   },
 
-  postMaxim: function postMaxim(maxim, challenge) {
-    var maximArray = maxim.split(" ");
-    var randId = Math.floor(Math.random() * maximArray.length);
-    var maximId = maximArray.slice(randId - 2, randId + 3).join("-");
-    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/maxim/').send({ maxim: maxim, challenge: challenge, maximId: maximId });
+  postKoan: function postKoan(koan, challenge) {
+    var koanArray = koan.split(" ");
+    var randId = Math.floor(Math.random() * koanArray.length);
+    var koanId = koanArray.slice(randId - 2, randId + 3).join("-");
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/koan/').send({ koan: koan, challenge: challenge, koanId: koanId });
   },
 
   postUser: function postUser(username, email, password) {
@@ -7514,25 +7514,25 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Maxim = function (_React$Component) {
-  _inherits(Maxim, _React$Component);
+var Koan = function (_React$Component) {
+  _inherits(Koan, _React$Component);
 
-  function Maxim() {
-    _classCallCheck(this, Maxim);
+  function Koan() {
+    _classCallCheck(this, Koan);
 
-    return _possibleConstructorReturn(this, (Maxim.__proto__ || Object.getPrototypeOf(Maxim)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Koan.__proto__ || Object.getPrototypeOf(Koan)).apply(this, arguments));
   }
 
-  _createClass(Maxim, [{
+  _createClass(Koan, [{
     key: 'render',
     value: function render() {
       if (this.props.link) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'maxim' },
+          { className: 'koan' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'maxim-content' },
+            { className: 'koan-content' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
               { to: this.props.link },
@@ -7547,10 +7547,10 @@ var Maxim = function (_React$Component) {
       } else {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'maxim' },
+          { className: 'koan' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'maxim-content' },
+            { className: 'koan-content' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
               null,
@@ -7562,10 +7562,10 @@ var Maxim = function (_React$Component) {
     }
   }]);
 
-  return Maxim;
+  return Koan;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Maxim);
+/* harmony default export */ __webpack_exports__["a"] = (Koan);
 
 /***/ }),
 /* 65 */
@@ -11550,7 +11550,7 @@ var About = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
               null,
-              'Read a maxim and let it sink in. Repeat it a few times and just be with the sounds.'
+              'Read a koan and let it sink in. Repeat it a few times and just be with the sounds.'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
@@ -11619,17 +11619,17 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
 
-      var maximId = void 0;
+      var koanId = void 0;
 
       if (this.props.match && this.props.match.params) {
-        maximId = this.props.match.params.maximId;
+        koanId = this.props.match.params.koanId;
       }
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'main row' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Header__["a" /* default */], null),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__ContentContainer__["a" /* default */], { maximId: maximId }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__ContentContainer__["a" /* default */], { koanId: koanId }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Menu__["a" /* default */], null)
       );
     }
@@ -11649,7 +11649,7 @@ var App = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Header__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Maxim__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Koan__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_router_dom__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Menu__ = __webpack_require__(22);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -11677,7 +11677,7 @@ var Archive = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Archive.__proto__ || Object.getPrototypeOf(Archive)).call(this));
 
     _this.state = {
-      maxims: null
+      koans: null
     };
     return _this;
   }
@@ -11687,9 +11687,9 @@ var Archive = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var maxims = [];
-      __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].getMaxims().end(function (error, res) {
-        _this2.setState({ maxims: res.body });
+      var koans = [];
+      __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].getKoans().end(function (error, res) {
+        _this2.setState({ koans: res.body });
       });
     }
   }, {
@@ -11697,26 +11697,26 @@ var Archive = function (_React$Component) {
     value: function render() {
       var archive = void 0;
 
-      if (this.state.maxims !== null) {
-        archive = this.state.maxims.map(function (maxim) {
+      if (this.state.koans !== null) {
+        archive = this.state.koans.map(function (koan) {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { key: maxim.maximId, className: 'archive-item' },
+            { key: koan.koanId, className: 'archive-item' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'archive-link-container' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Maxim__["a" /* default */], { link: 'maxim/' + maxim.maximId, quote: maxim.maxim }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Koan__["a" /* default */], { link: 'koan/' + koan.koanId, quote: koan.koan }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null)
             )
           );
         });
       }
 
-      if (this.state.maxims !== null && this.state.maxims.length < 1) {
+      if (this.state.koans !== null && this.state.koans.length < 1) {
         archive = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'p',
           null,
-          'No maxims available.'
+          'No koans available.'
         );
       }
 
@@ -12056,25 +12056,25 @@ var Console = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Console.__proto__ || Object.getPrototypeOf(Console)).call(this));
 
-    _this.handleMaximChange = function (e) {
-      _this.setState({ maxim: e.target.value });
+    _this.handleKoanChange = function (e) {
+      _this.setState({ koan: e.target.value });
     };
 
     _this.handleChallengeChange = function (e) {
       _this.setState({ challenge: e.target.value });
     };
 
-    _this.postMaxim = function (e) {
+    _this.postKoan = function (e) {
       e.preventDefault();
-      __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].postMaxim(_this.state.maxim, _this.state.challenge, _this.state.maximId).end(function (err, res) {
-        console.log("Posting Maxim/Challenge");
+      __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].postKoan(_this.state.koan, _this.state.challenge, _this.state.koanId).end(function (err, res) {
+        console.log("Posting Koan/Challenge");
       });
     };
 
     _this.state = {
-      maxim: "",
+      koan: "",
       challenge: "",
-      maximId: null
+      koanId: null
     };
     return _this;
   }
@@ -12099,16 +12099,16 @@ var Console = function (_React$Component) {
           { className: 'row' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'form',
-            { id: 'console-form', className: 'console-form', onSubmit: this.postMaxim },
+            { id: 'console-form', className: 'console-form', onSubmit: this.postKoan },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'fieldset',
               null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'label',
-                { htmlFor: 'post-maxim', className: 'console-label' },
-                'Post a New Maxim'
+                { htmlFor: 'post-koan', className: 'console-label' },
+                'Post a New Koan'
               ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-maxim', className: 'console-textarea', required: true, onChange: this.handleMaximChange }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-koan', className: 'console-textarea', required: true, onChange: this.handleKoanChange }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'label',
                 { htmlFor: 'post-challenge', className: 'console-label' },
@@ -12145,7 +12145,7 @@ var Console = function (_React$Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Maxim__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Koan__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Challenge__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Prompt__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api__ = __webpack_require__(32);
@@ -12175,9 +12175,9 @@ var ContentContainer = function (_React$Component) {
 
     _this.changeContent = _this.changeContent.bind(_this);
     _this.state = {
-      content: "maxim",
+      content: "koan",
       prompt: "make it real",
-      maxim: {}
+      koan: {}
     };
     return _this;
   }
@@ -12188,10 +12188,10 @@ var ContentContainer = function (_React$Component) {
       var content = this.state.content;
       var prompt = this.state.prompt;
       this.setState({
-        content: content == "challenge" ? "maxim" : "challenge"
+        content: content == "challenge" ? "koan" : "challenge"
       });
       this.setState({
-        prompt: content == "maxim" ? "What is this?" : "make it real"
+        prompt: content == "koan" ? "What is this?" : "make it real"
       });
     }
   }, {
@@ -12199,13 +12199,13 @@ var ContentContainer = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      if (this.props && this.props.maximId) {
-        __WEBPACK_IMPORTED_MODULE_4__api__["a" /* default */].getMaximById(this.props.maximId).end(function (error, res) {
-          _this2.setState({ maxim: res.body });
+      if (this.props && this.props.koanId) {
+        __WEBPACK_IMPORTED_MODULE_4__api__["a" /* default */].getKoanById(this.props.koanId).end(function (error, res) {
+          _this2.setState({ koan: res.body });
         });
       } else {
-        __WEBPACK_IMPORTED_MODULE_4__api__["a" /* default */].getLatestMaxim().end(function (error, res) {
-          _this2.setState({ maxim: res.body[0] });
+        __WEBPACK_IMPORTED_MODULE_4__api__["a" /* default */].getLatestKoan().end(function (error, res) {
+          _this2.setState({ koan: res.body[0] });
         });
       }
     }
@@ -12214,7 +12214,7 @@ var ContentContainer = function (_React$Component) {
     value: function render() {
       var renderedContent = null;
       if (this.state.content == "challenge") {
-        renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Challenge__["a" /* default */], { content: this.state.maxim.challenge });
+        renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Challenge__["a" /* default */], { content: this.state.koan.challenge });
         prompt = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["d" /* Link */],
           { to: '/about' },
@@ -12230,7 +12230,7 @@ var ContentContainer = function (_React$Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'row' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Maxim__["a" /* default */], { quote: this.state.maxim.maxim }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Koan__["a" /* default */], { quote: this.state.koan.koan }),
           renderedContent
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -12533,7 +12533,7 @@ var Root = function Root() {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_7__components_RegisterScreen__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/archive', component: __WEBPACK_IMPORTED_MODULE_8__components_Archive__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/about', component: __WEBPACK_IMPORTED_MODULE_9__components_About__["a" /* default */] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/maxim/:maximId', component: __WEBPACK_IMPORTED_MODULE_5__components_App__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/koan/:koanId', component: __WEBPACK_IMPORTED_MODULE_5__components_App__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/console', component: __WEBPACK_IMPORTED_MODULE_10__components_ConsoleScreen__["a" /* default */] })
     )
   );
@@ -12733,7 +12733,7 @@ exports = module.exports = __webpack_require__(65)();
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\nhr {\n    border: 0;\n    width: 80px;\n    margin-top: 10px;\n    height: 1px;\n    background: #333;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container, .about, .archive, .console {\n  margin-bottom: 100px;\n}\n\n.about-content, .maxim-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0px 35px 0px 35px;\n}\n\n.about-content p {\n  margin-bottom: 10px;\n}\n\n.challenge-content a {\n  text-decoration: none;\n}\n\n.maxim {\n  text-align: center;\n}\n\n.maxim-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.explanation {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n  margin-top: 20px;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n  padding: 28px 0px 7px 0px;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n@media only screen and (max-width: 639px) {\n  .console-textarea {\n    width: 80%;\n  }\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n.logout-link {\n  font-size: 14px;\n  text-decoration: none;\n  color: #292526;\n}\n\n.logout-link p {\n  display: inline-block;\n}\n\n/*\n.slide-down {\n\tanimation-name: slideDown;\n\t-webkit-animation-name: slideDown;\n\n\tanimation-duration: .7s;\n\t-webkit-animation-duration: .7s;\n\n\tanimation-timing-function: ease-in;\n\t-webkit-animation-timing-function: ease-in;\n\n\tvisibility: visible !important;\n}\n\n@keyframes slideDown {\n\t0% {\n\t\ttransform: translateY(-100%);\n\t}\n\t100% {\n\t\ttransform: translateY(0%);\n\t}\n}\n\n@-webkit-keyframes slideDown {\n\t0% {\n\t\t-webkit-transform: translateY(-100%);\n\t}\n\t100% {\n\t\t-webkit-transform: translateY(0%);\n\t}\n}\n*/\n\n.fade-in {\n  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 1.5s; /* Firefox < 16 */\n  -ms-animation: fadein 1.5s; /* Internet Explorer */\n  -o-animation: fadein 1.5s; /* Opera < 12.1 */\n  animation: fadein 1.5s;\n}\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\nhr {\n    border: 0;\n    width: 80px;\n    margin-top: 10px;\n    height: 1px;\n    background: #333;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container, .about, .archive, .console {\n  margin-bottom: 100px;\n}\n\n.about-content, .koan-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0px 35px 0px 35px;\n}\n\n.about-content p {\n  margin-bottom: 10px;\n}\n\n.challenge-content a {\n  text-decoration: none;\n}\n\n.koan {\n  text-align: center;\n}\n\n.koan-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.explanation {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n  margin-top: 20px;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n  padding: 28px 0px 7px 0px;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n@media only screen and (max-width: 639px) {\n  .console-textarea {\n    width: 80%;\n  }\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n.logout-link {\n  font-size: 14px;\n  text-decoration: none;\n  color: #292526;\n}\n\n.logout-link p {\n  display: inline-block;\n}\n\n/*\n.slide-down {\n\tanimation-name: slideDown;\n\t-webkit-animation-name: slideDown;\n\n\tanimation-duration: .7s;\n\t-webkit-animation-duration: .7s;\n\n\tanimation-timing-function: ease-in;\n\t-webkit-animation-timing-function: ease-in;\n\n\tvisibility: visible !important;\n}\n\n@keyframes slideDown {\n\t0% {\n\t\ttransform: translateY(-100%);\n\t}\n\t100% {\n\t\ttransform: translateY(0%);\n\t}\n}\n\n@-webkit-keyframes slideDown {\n\t0% {\n\t\t-webkit-transform: translateY(-100%);\n\t}\n\t100% {\n\t\t-webkit-transform: translateY(0%);\n\t}\n}\n*/\n\n.fade-in {\n  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 1.5s; /* Firefox < 16 */\n  -ms-animation: fadein 1.5s; /* Internet Explorer */\n  -o-animation: fadein 1.5s; /* Opera < 12.1 */\n  animation: fadein 1.5s;\n}\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
 
 // exports
 
