@@ -44,7 +44,7 @@ class Archive extends React.Component {
         <Header/>
         <div className="row">
           <div className="archive-content">
-            <h2 className="archive-header">Archive</h2>
+            <h2 className="archive-header">Koans</h2>
           </div>
         </div>
         <div className="row">

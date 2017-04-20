@@ -2754,8 +2754,8 @@ var Menu = function (_React$Component) {
           { className: 'col-3-always menu-link-div' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-            { to: '/about', className: 'about-link' },
-            'About'
+            { to: '/archive', className: 'archive-link' },
+            'Koans'
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -2763,8 +2763,8 @@ var Menu = function (_React$Component) {
           { className: 'col-3-always menu-link-div' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-            { to: '/archive', className: 'archive-link' },
-            'Archive'
+            { to: '/about', className: 'about-link' },
+            'About'
           )
         )
       );
@@ -11525,15 +11525,6 @@ var About = function (_React$Component) {
           'div',
           { className: 'row' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            { className: 'about-header' },
-            'About'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'about-content' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -11555,7 +11546,7 @@ var About = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
               null,
-              'If you feel up for a challenge, click on "make it real". A challenge will appear to guide you to putting this wisdom into action.'
+              'If you feel up for an exploration, click on "make it real". An inquiry will appear to guide you to putting this wisdom into action.'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
@@ -11733,7 +11724,7 @@ var Archive = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'h2',
               { className: 'archive-header' },
-              'Archive'
+              'Koans'
             )
           )
         ),
@@ -12009,7 +12000,7 @@ var Challenge = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'h3',
               null,
-              'Challenge:'
+              'Inquiry:'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',

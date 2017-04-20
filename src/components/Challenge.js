@@ -7,7 +7,7 @@ class Challenge extends React.Component {
       <div className="challenge fade-in">
         <div className="row">
           <div className="challenge-content">
-            <h3>Challenge:</h3>
+            <h3>Inquiry:</h3>
             <p>{this.props.content}</p>
           </div>
         </div>
