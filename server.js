@@ -19,7 +19,7 @@ app.use(require('express-status-monitor')());
 
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'front-end', 'public')));
 
 app.use(sessions({
   cookieName: 'shiva',
@@ -36,7 +36,7 @@ app.use('/', router);
 
 
 app.get(['/login', '/register', '/about', '/archive', '/koan/:koanId'], (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))});
+  res.sendFile(path.resolve(__dirname, 'front-end', 'public', 'index.html'))});
 
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
