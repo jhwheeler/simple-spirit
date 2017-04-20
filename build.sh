@@ -17,9 +17,9 @@ function build_simple_spirit {
 }
 
 function import_db {
-  docker exec -it simplespirit_mongo_1 mongoimport --db simple-spirit --collection users --file users.json
-  docker exec -it simplespirit_mongo_1 mongoimport --db simple-spirit --collection maxims --file maxims.json
-  docker exec -it simplespirit_mongo_1 mongoimport --db simple-spirit --collection sessions --file sessions.json
+  docker exec -it simplespirit_mongo_1 mongoimport --db simple-spirit --collection users --file data/users.json
+  docker exec -it simplespirit_mongo_1 mongoimport --db simple-spirit --collection maxims --file data/maxims.json
+  docker exec -it simplespirit_mongo_1 mongoimport --db simple-spirit --collection sessions --file data/sessions.json
 }
 
 function setup {
