@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Challenge extends React.Component {
+class Inquiry extends React.Component {
   render() {
     return(
-      <div className="challenge fade-in">
+      <div className="inquiry fade-in">
         <div className="row">
-          <div className="challenge-content">
+          <div className="inquiry-content">
             <h3>Inquiry:</h3>
             <p>{this.props.content}</p>
           </div>
@@ -16,4 +16,4 @@ class Challenge extends React.Component {
   }
 }
 
-export default Challenge;
+export default Inquiry;

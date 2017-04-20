@@ -13,13 +13,13 @@ const api = {
     return superagent.get('/api/koan');
   },
 
-  postKoan: (koan, challenge) => {
+  postKoan: (koan, inquiry) => {
       const koanArray = koan.split(" ");
       const randId = Math.floor(Math.random() * koanArray.length);
       const koanId = koanArray.slice((randId - 2), (randId + 3)).join("-");
     return superagent
       .post('/api/koan/')
-      .send({koan: koan, challenge: challenge, koanId: koanId});
+      .send({koan: koan, inquiry: inquiry, koanId: koanId});
   },
 
   postUser: (username, email, password) => {

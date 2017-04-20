@@ -53,7 +53,7 @@ router.get('/api/koan/:koanId?', (req, res) => {
 
 router.post('/api/koan', (req, res) => {
 
-  const requiredFields = ['koanId', 'koan', 'challenge'];
+  const requiredFields = ['koanId', 'koan', 'inquiry'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -69,7 +69,7 @@ router.post('/api/koan', (req, res) => {
     .create({
       koanId: req.body.koanId,
       koan: req.body.koan,
-      challenge: req.body.challenge,
+      inquiry: req.body.inquiry,
       date: date
     })
     .then(data => res.status(200).json(data))
@@ -89,7 +89,7 @@ router.put('/api/koan/:koanId', (req, res) => {
   }
 
   const toUpdate = {};
-  const updateableFields = ['koanId', 'koan', 'challenge', 'date']
+  const updateableFields = ['koanId', 'koan', 'inquiry', 'date']
 
   updateableFields.forEach(field => {
     if (field in req.body) {

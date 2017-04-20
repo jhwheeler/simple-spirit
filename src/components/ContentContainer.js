@@ -1,6 +1,6 @@
 import React from 'react';
 import Koan from './Koan';
-import Challenge from './Challenge';
+import Inquiry from './Inquiry';
 import Prompt from './Prompt';
 import api from '../api';
 import {Link} from 'react-router-dom';
@@ -20,7 +20,7 @@ class ContentContainer extends React.Component {
     let content = this.state.content;
     let prompt = this.state.prompt;
     this.setState({
-      content: content == "challenge" ? "koan" : "challenge"
+      content: content == "inquiry" ? "koan" : "inquiry"
     });
     this.setState({
       prompt: content == "koan" ? "What is this?" : "make it real"
@@ -41,8 +41,8 @@ class ContentContainer extends React.Component {
 
   render() {
     let renderedContent = null;
-    if (this.state.content == "challenge") {
-      renderedContent = <Challenge content={this.state.koan.challenge}/>;
+    if (this.state.content == "inquiry") {
+      renderedContent = <Inquiry content={this.state.koan.inquiry}/>;
       prompt = <Link to="/about"><Prompt prompt={this.state.prompt} onClick={this.changeContent}/></Link>;
     } else {
       renderedContent = null;

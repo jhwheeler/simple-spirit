@@ -17,7 +17,7 @@ class About extends React.Component {
             <p>Read a koan and let it sink in. Repeat it a few times and just be with the sounds.</p>
             <p>If you feel up for an exploration, click on "make it real". An inquiry will appear to guide you to putting this wisdom into action.</p>
             <p>Throughout the day, try this practice and see what arises...</p>
-            <Link to="/archive">
+            <Link to="/koans">
               <button className="button">Explore</button>
             </Link>
           </div>

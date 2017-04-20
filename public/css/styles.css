@@ -45,7 +45,7 @@ hr {
   margin-bottom: 100px;
 }
 
-.about-content, .koan-content, .challenge-content {
+.about-content, .koan-content, .inquiry-content {
   font-size: 20px;
   text-align: center;
   color: #292526;
@@ -56,7 +56,7 @@ hr {
   margin-bottom: 10px;
 }
 
-.challenge-content a {
+.inquiry-content a {
   text-decoration: none;
 }
 
@@ -93,7 +93,7 @@ hr {
   width: 30px;
 }
 
-.challenge {
+.inquiry {
   margin: 20px;
   line-height: 30px;
   text-align: center;

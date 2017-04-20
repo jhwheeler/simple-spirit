@@ -15,7 +15,7 @@
 * can record my experience of a certain tool through text, video, or audio
 * can share that experience, koan, and/or tool on social media
 * can enter a forum where I can share and learn from others' experiences
-* am called to act on a Challenge of the Day/Week, an opportunity for me to use the daily tools to create an end result that I can then share on the forum and/or social media. There is a contest with prizes that inspire me and my fellows to complete the challenge.
+* am called to explore an Inquiry of the Day/Week, an opportunity for me to use the daily tools to create an end result that I can then share on the forum and/or social media.
 * can invite friends who haven't joined to create accounts
 
 
@@ -26,4 +26,4 @@
 * receive 1 daily koan
 * view tools on how to implement the wisdom of the daily koan
 * can log in/out
-* can record my experience of a certain tool through text
+* can write my experience of a certain koan, which disappears upon entering. This is a way for me to clear my mind and let go.

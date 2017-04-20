@@ -26,7 +26,7 @@ function generateKoan() {
   return {
     koanId: faker.lorem.words(),
     koan: faker.lorem.words(),
-    challenge: faker.lorem.words(),
+    inquiry: faker.lorem.words(),
     date: Date.now()
   }
 }
@@ -111,16 +111,16 @@ describe('API calls', function() {
           res.should.be.json;
           res.body.should.be.an('object');
           res.body.should.include.keys(
-              'koanId', 'koan', 'challenge', 'date');
+              'koanId', 'koan', 'inquiry', 'date');
           res.body.koan.should.equal(newKoan.koan);
           res.body.koanId.should.not.be.null;
-          res.body.challenge.should.equal(newKoan.challenge);
+          res.body.inquiry.should.equal(newKoan.inquiry);
 
           return Koan.findOne({koanId: res.body.koanId});
       })
       .then(function(koan) {
           koan.koan.should.equal(newKoan.koan);
-          koan.challenge.should.equal(newKoan.challenge);
+          koan.inquiry.should.equal(newKoan.inquiry);
       });
     });
   });
@@ -130,7 +130,7 @@ describe('API calls', function() {
     it('should update fields you send', function() {
       const updateData = {
         koan: 'The best koan ever',
-        challenge: 'Make it happen. You can do it!'
+        inquiry: 'Make it happen. You can do it!'
       };
 
       return Koan
@@ -150,7 +150,7 @@ describe('API calls', function() {
         })
         .then(function(koan) {
           koan.koan.should.equal(updateData.koan);
-          koan.challenge.should.equal(updateData.challenge);
+          koan.inquiry.should.equal(updateData.inquiry);
         });
     })
   })

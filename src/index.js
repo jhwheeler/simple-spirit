@@ -19,7 +19,7 @@ const Root = () => {
         <Route exact path="/" component={App} />
         <Route path="/login" component={LoginScreen} />
         <Route path="/register" component={RegisterScreen} />
-        <Route path="/archive" component={Archive} />
+        <Route path="/koans" component={Archive} />
         <Route path="/about" component={About} />
         <Route path="/koan/:koanId" component={App} />
         <Route path="/console" component={ConsoleScreen} />

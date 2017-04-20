@@ -2754,7 +2754,7 @@ var Menu = function (_React$Component) {
           { className: 'col-3-always menu-link-div' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-            { to: '/archive', className: 'archive-link' },
+            { to: '/koans', className: 'archive-link' },
             'Koans'
           )
         ),
@@ -3837,11 +3837,11 @@ var api = {
     return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.get('/api/koan');
   },
 
-  postKoan: function postKoan(koan, challenge) {
+  postKoan: function postKoan(koan, inquiry) {
     var koanArray = koan.split(" ");
     var randId = Math.floor(Math.random() * koanArray.length);
     var koanId = koanArray.slice(randId - 2, randId + 3).join("-");
-    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/koan/').send({ koan: koan, challenge: challenge, koanId: koanId });
+    return __WEBPACK_IMPORTED_MODULE_0_superagent___default.a.post('/api/koan/').send({ koan: koan, inquiry: inquiry, koanId: koanId });
   },
 
   postUser: function postUser(username, email, password) {
@@ -11555,7 +11555,7 @@ var About = function (_React$Component) {
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-              { to: '/archive' },
+              { to: '/koans' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
                 { className: 'button' },
@@ -11583,7 +11583,7 @@ var About = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Menu__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ContentContainer__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ContentContainer__ = __webpack_require__(110);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11751,7 +11751,7 @@ var Archive = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Console__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Console__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Menu__ = __webpack_require__(22);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11964,67 +11964,6 @@ if(false) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(11);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var Challenge = function (_React$Component) {
-  _inherits(Challenge, _React$Component);
-
-  function Challenge() {
-    _classCallCheck(this, Challenge);
-
-    return _possibleConstructorReturn(this, (Challenge.__proto__ || Object.getPrototypeOf(Challenge)).apply(this, arguments));
-  }
-
-  _createClass(Challenge, [{
-    key: 'render',
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'challenge fade-in' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'row' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'challenge-content' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h3',
-              null,
-              'Inquiry:'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'p',
-              null,
-              this.props.content
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Challenge;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (Challenge);
-
-/***/ }),
-/* 110 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(11);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12051,20 +11990,20 @@ var Console = function (_React$Component) {
       _this.setState({ koan: e.target.value });
     };
 
-    _this.handleChallengeChange = function (e) {
-      _this.setState({ challenge: e.target.value });
+    _this.handleInquiryChange = function (e) {
+      _this.setState({ inquiry: e.target.value });
     };
 
     _this.postKoan = function (e) {
       e.preventDefault();
-      __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].postKoan(_this.state.koan, _this.state.challenge, _this.state.koanId).end(function (err, res) {
-        console.log("Posting Koan/Challenge");
+      __WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */].postKoan(_this.state.koan, _this.state.inquiry, _this.state.koanId).end(function (err, res) {
+        console.log("Posting Koan/Inquiry");
       });
     };
 
     _this.state = {
       koan: "",
-      challenge: "",
+      inquiry: "",
       koanId: null
     };
     return _this;
@@ -12102,10 +12041,10 @@ var Console = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-koan', className: 'console-textarea', required: true, onChange: this.handleKoanChange }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'label',
-                { htmlFor: 'post-challenge', className: 'console-label' },
-                'Post a New Challenge'
+                { htmlFor: 'post-inquiry', className: 'console-label' },
+                'Post a New Inquiry'
               ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-challenge', className: 'console-textarea', required: true, onChange: this.handleChallengeChange })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: 'post-inquiry', className: 'console-textarea', required: true, onChange: this.handleInquiryChange })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'Post' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
@@ -12130,14 +12069,14 @@ var Console = function (_React$Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Console);
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Koan__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Challenge__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Inquiry__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Prompt__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_router_dom__ = __webpack_require__(11);
@@ -12179,7 +12118,7 @@ var ContentContainer = function (_React$Component) {
       var content = this.state.content;
       var prompt = this.state.prompt;
       this.setState({
-        content: content == "challenge" ? "koan" : "challenge"
+        content: content == "inquiry" ? "koan" : "inquiry"
       });
       this.setState({
         prompt: content == "koan" ? "What is this?" : "make it real"
@@ -12204,8 +12143,8 @@ var ContentContainer = function (_React$Component) {
     key: 'render',
     value: function render() {
       var renderedContent = null;
-      if (this.state.content == "challenge") {
-        renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Challenge__["a" /* default */], { content: this.state.koan.challenge });
+      if (this.state.content == "inquiry") {
+        renderedContent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Inquiry__["a" /* default */], { content: this.state.koan.inquiry });
         prompt = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["d" /* Link */],
           { to: '/about' },
@@ -12237,6 +12176,67 @@ var ContentContainer = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (ContentContainer);
+
+/***/ }),
+/* 111 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(11);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Inquiry = function (_React$Component) {
+  _inherits(Inquiry, _React$Component);
+
+  function Inquiry() {
+    _classCallCheck(this, Inquiry);
+
+    return _possibleConstructorReturn(this, (Inquiry.__proto__ || Object.getPrototypeOf(Inquiry)).apply(this, arguments));
+  }
+
+  _createClass(Inquiry, [{
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'inquiry fade-in' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'row' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'inquiry-content' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h3',
+              null,
+              'Inquiry:'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              null,
+              this.props.content
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Inquiry;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Inquiry);
 
 /***/ }),
 /* 112 */
@@ -12522,7 +12522,7 @@ var Root = function Root() {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_5__components_App__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_6__components_LoginScreen__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_7__components_RegisterScreen__["a" /* default */] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/archive', component: __WEBPACK_IMPORTED_MODULE_8__components_Archive__["a" /* default */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/koans', component: __WEBPACK_IMPORTED_MODULE_8__components_Archive__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/about', component: __WEBPACK_IMPORTED_MODULE_9__components_About__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/koan/:koanId', component: __WEBPACK_IMPORTED_MODULE_5__components_App__["a" /* default */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/console', component: __WEBPACK_IMPORTED_MODULE_10__components_ConsoleScreen__["a" /* default */] })
@@ -12724,7 +12724,7 @@ exports = module.exports = __webpack_require__(65)();
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\nhr {\n    border: 0;\n    width: 80px;\n    margin-top: 10px;\n    height: 1px;\n    background: #333;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container, .about, .archive, .console {\n  margin-bottom: 100px;\n}\n\n.about-content, .koan-content, .challenge-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0px 35px 0px 35px;\n}\n\n.about-content p {\n  margin-bottom: 10px;\n}\n\n.challenge-content a {\n  text-decoration: none;\n}\n\n.koan {\n  text-align: center;\n}\n\n.koan-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.challenge {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.explanation {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n  margin-top: 20px;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n  padding: 28px 0px 7px 0px;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n@media only screen and (max-width: 639px) {\n  .console-textarea {\n    width: 80%;\n  }\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n.logout-link {\n  font-size: 14px;\n  text-decoration: none;\n  color: #292526;\n}\n\n.logout-link p {\n  display: inline-block;\n}\n\n/*\n.slide-down {\n\tanimation-name: slideDown;\n\t-webkit-animation-name: slideDown;\n\n\tanimation-duration: .7s;\n\t-webkit-animation-duration: .7s;\n\n\tanimation-timing-function: ease-in;\n\t-webkit-animation-timing-function: ease-in;\n\n\tvisibility: visible !important;\n}\n\n@keyframes slideDown {\n\t0% {\n\t\ttransform: translateY(-100%);\n\t}\n\t100% {\n\t\ttransform: translateY(0%);\n\t}\n}\n\n@-webkit-keyframes slideDown {\n\t0% {\n\t\t-webkit-transform: translateY(-100%);\n\t}\n\t100% {\n\t\t-webkit-transform: translateY(0%);\n\t}\n}\n*/\n\n.fade-in {\n  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 1.5s; /* Firefox < 16 */\n  -ms-animation: fadein 1.5s; /* Internet Explorer */\n  -o-animation: fadein 1.5s; /* Opera < 12.1 */\n  animation: fadein 1.5s;\n}\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif;\n}\n\nbody {\n  margin: 0;\n  background-image: url('/images/texture.jpg');\n  background-repeat: repeat;\n  overflow-x: hidden;\n  width: 100%;\n}\n\nh1 {\n  font-size: 42px;\n  font-weight: 100;\n  text-align: center;\n}\n\np {\n  margin: 0;\n}\n\nhr {\n    border: 0;\n    width: 80px;\n    margin-top: 10px;\n    height: 1px;\n    background: #333;\n    background-image: linear-gradient(to right, #ccc, #333, #ccc);\n}\n\n.header {\n  padding: 30px;\n  margin-bottom: 30px;\n}\n\n.header img {\n  display: block;\n  margin: auto;\n  height: 100px;\n}\n\n.content-container, .about, .archive, .console {\n  margin-bottom: 100px;\n}\n\n.about-content, .koan-content, .inquiry-content {\n  font-size: 20px;\n  text-align: center;\n  color: #292526;\n  margin: 0px 35px 0px 35px;\n}\n\n.about-content p {\n  margin-bottom: 10px;\n}\n\n.inquiry-content a {\n  text-decoration: none;\n}\n\n.koan {\n  text-align: center;\n}\n\n.koan-content a {\n  text-decoration: none;\n  color: #292526;\n  margin: 10px 0px;\n}\n\n.prompt {\n  text-align: center;\n  padding: 10px;\n  margin: 20px 0px;\n}\n\n.prompt-button {\n  border: none;\n  background-color: transparent;\n  font-size: 14px;\n}\n\n.prompt-button:hover {\n  cursor: pointer;\n}\n\n.arrow {\n  display: block;\n  margin: 0 auto;\n  margin-top: 10px;\n  width: 30px;\n}\n\n.inquiry {\n  margin: 20px;\n  line-height: 30px;\n  text-align: center;\n}\n\n.explanation {\n  font-size: 12px;\n  text-decoration: none;\n  color: #292526;\n  margin-top: 20px;\n}\n\n.experience-recording {\n  margin: 40px 0px;\n  text-align: center;\n}\n\n.experience-button-wrapper {\n  text-align: center;\n}\n\n.archive-item {\n  text-align: center;\n}\n\nh2, h3 {\n  font-weight: 400;\n  margin-left: 10px;\n  text-align: center;\n}\n\n.archive-link-container {\n  text-decoration: none;\n  display: inline-block;\n  padding: 28px 0px 7px 0px;\n}\n\n.login, .register {\n  text-align: center;\n}\n\nfieldset {\n  border: 0;\n  margin: 0px;\n  padding: 0px;\n}\n\n.user-input, .email-input, .name-input, .pass-input {\n  width: 180px;\n  height: 40px;\n  padding: 10px;\n  margin: 0px;\n}\n\n.already-user, .register-link {\n  text-decoration: none;\n}\n\n.button {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px;\n  cursor: pointer;\n}\n\n.menu {\n  position: fixed;\n  bottom: 0;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  margin: 0 auto;\n  height: 60px;\n  width: 100%;\n  color: #fff;\n  background-color: #1e1e1e;\n  text-align: center;\n}\n\n.share img {\n  height: 29px;\n  width: 27px;\n}\n\n.hamburger {\n  float: right;\n  padding-right: 20px;\n  display: inline-block;\n}\n\n.hamburger img {\n  height: 30px;\n  width: 45px;\n}\n\n.home-link, .about-link, .share-link, .archive-link, .login-link {\n  text-decoration: none;\n  color: #fff;\n  display: inline-block;\n  font-size: 18px;\n}\n\n.menu-link-div {\n  text-align: center;\n}\n\n.console-header {\n  text-align: center;\n}\n\n.console .row .col-12 h2 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n\n.console-form {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.console-textarea {\n  height: 80px;\n  width: 600px;\n  margin: 10px 0px;;\n  resize: none;\n  outline: none;\n}\n\n@media only screen and (max-width: 639px) {\n  .console-textarea {\n    width: 80%;\n  }\n}\n\n.console-label {\n  display: block;\n  margin-top: 20px;\n}\n\n.console-input {\n  margin-top: 10px;\n  width: 40px;\n}\n\n.console-submit {\n  width: 180px;\n  height: 40px;\n  background-color: #1e1e1e;\n  color: #fff;\n  font-size: 14px;\n  border: none;\n  margin: 20px 0px;\n}\n\n.logout-link {\n  font-size: 14px;\n  text-decoration: none;\n  color: #292526;\n}\n\n.logout-link p {\n  display: inline-block;\n}\n\n/*\n.slide-down {\n\tanimation-name: slideDown;\n\t-webkit-animation-name: slideDown;\n\n\tanimation-duration: .7s;\n\t-webkit-animation-duration: .7s;\n\n\tanimation-timing-function: ease-in;\n\t-webkit-animation-timing-function: ease-in;\n\n\tvisibility: visible !important;\n}\n\n@keyframes slideDown {\n\t0% {\n\t\ttransform: translateY(-100%);\n\t}\n\t100% {\n\t\ttransform: translateY(0%);\n\t}\n}\n\n@-webkit-keyframes slideDown {\n\t0% {\n\t\t-webkit-transform: translateY(-100%);\n\t}\n\t100% {\n\t\t-webkit-transform: translateY(0%);\n\t}\n}\n*/\n\n.fade-in {\n  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 1.5s; /* Firefox < 16 */\n  -ms-animation: fadein 1.5s; /* Internet Explorer */\n  -o-animation: fadein 1.5s; /* Opera < 12.1 */\n  animation: fadein 1.5s;\n}\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n/* Utility classes */\n.visually-hidden {\n  border: 0 !important;\n  clip: rect(0 0 0 0) !important;\n  height: 1px !important;\n  margin: -1px !important;\n  overflow: hidden !important;\n  padding: 0 !important;\n  position: absolute !important;\n  width: 1px !important;\n}\n", ""]);
 
 // exports
 
