@@ -2,7 +2,7 @@ import React from 'react';
 import api from '../api';
 import { Link } from 'react-router-dom';
 
-class Console extends React.Component {
+export default class Console extends React.Component {
   constructor() {
     super();
 
@@ -36,9 +36,9 @@ class Console extends React.Component {
           <form id="console-form" className="console-form" onSubmit={this.postKoan}>
             <fieldset>
               <label htmlFor="post-koan" className="console-label">Post a New Koan</label>
-              <textarea name="post-koan" className="console-textarea" required onChange={this.handleKoanChange}></textarea>
+              <textarea name="post-koan" required onChange={this.handleKoanChange}></textarea>
               <label htmlFor="post-inquiry" className="console-label">Post a New Inquiry</label>
-              <textarea name="post-inquiry" className="console-textarea" required onChange={this.handleInquiryChange}></textarea>
+              <textarea name="post-inquiry" required onChange={this.handleInquiryChange}></textarea>
             </fieldset>
             <input type="submit" className="button" value="Post"/>
             <br/>
@@ -49,5 +49,3 @@ class Console extends React.Component {
     );
   }
 }
-
-export default Console;

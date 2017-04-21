@@ -3,7 +3,7 @@ import Header from './Header';
 import Console from './Console';
 import Menu from './Menu';
 
-class ConsoleScreen extends React.Component {
+export default class ConsoleScreen extends React.Component {
   render() {
     return (
       <div className="console-screen">
@@ -14,5 +14,3 @@ class ConsoleScreen extends React.Component {
     );
   }
 }
-
-export default ConsoleScreen;

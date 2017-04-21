@@ -4,7 +4,7 @@ import Header from './Header';
 import LoginForm from './LoginForm';
 import Menu from './Menu';
 
-class LoginScreen extends React.Component {
+export default class LoginScreen extends React.Component {
   render() {
     return (
       <div className="login-screen">
@@ -15,5 +15,3 @@ class LoginScreen extends React.Component {
     );
   }
 }
-
-export default LoginScreen;

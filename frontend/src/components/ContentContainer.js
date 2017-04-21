@@ -5,7 +5,7 @@ import Prompt from './Prompt';
 import api from '../api';
 import {Link} from 'react-router-dom';
 
-class ContentContainer extends React.Component {
+export default class ContentContainer extends React.Component {
   constructor() {
     super();
     this.changeContent = this.changeContent.bind(this);
@@ -61,5 +61,3 @@ class ContentContainer extends React.Component {
       );
   }
 }
-
-export default ContentContainer;

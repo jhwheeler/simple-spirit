@@ -111,10 +111,6 @@ hr {
   text-align: center;
 }
 
-.experience-button-wrapper {
-  text-align: center;
-}
-
 .archive-item {
   text-align: center;
 }
@@ -159,8 +155,9 @@ fieldset {
   color: #fff;
   font-size: 14px;
   border: none;
-  margin: 20px;
+  margin: 20px auto;
   cursor: pointer;
+  text-align: center;
 }
 
 .menu {
@@ -217,8 +214,8 @@ fieldset {
   text-align: center;
 }
 
-.console-textarea {
-  height: 80px;
+textarea {
+  height: 100px;
   width: 600px;
   margin: 10px 0px;;
   resize: none;
@@ -226,7 +223,7 @@ fieldset {
 }
 
 @media only screen and (max-width: 639px) {
-  .console-textarea {
+  textarea {
     width: 80%;
   }
 }

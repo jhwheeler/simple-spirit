@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import api from '../api';
 
-class RegisterForm extends React.Component {
+export default class RegisterForm extends React.Component {
   constructor() {
     super();
 
@@ -53,5 +53,3 @@ class RegisterForm extends React.Component {
     );
   }
 }
-
-export default RegisterForm;

@@ -3,7 +3,7 @@ import Header from './Header';
 import Menu from './Menu';
 import ContentContainer from './ContentContainer';
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
 
   let koanId;
@@ -21,5 +21,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;

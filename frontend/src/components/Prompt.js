@@ -1,7 +1,7 @@
 import React from 'react';
 import arrow from '../../public/images/arrow.png';
 
-class Prompt extends React.Component {
+export default class Prompt extends React.Component {
   render() {
     return(
       <div className="prompt row">
@@ -13,5 +13,3 @@ class Prompt extends React.Component {
     );
   }
 }
-
-export default Prompt;

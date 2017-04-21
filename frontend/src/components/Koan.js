@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Koan extends React.Component {
+export default class Koan extends React.Component {
   render() {
     if (this.props.link) {
       return (
@@ -24,5 +24,3 @@ class Koan extends React.Component {
     }
   }
 }
-
-export default Koan;

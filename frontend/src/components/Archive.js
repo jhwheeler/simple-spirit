@@ -6,7 +6,7 @@ import Koan from './Koan';
 import {Link} from 'react-router-dom';
 import Menu from './Menu';
 
-class Archive extends React.Component {
+export default class Archive extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -55,5 +55,3 @@ class Archive extends React.Component {
     );
   }
 }
-
-export default Archive;

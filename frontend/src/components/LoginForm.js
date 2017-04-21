@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class LoginForm extends React.Component {
+export default class LoginForm extends React.Component {
   render() {
     const queryParams = window.location.search.split("?");
     let errorMessage;
@@ -31,5 +31,3 @@ class LoginForm extends React.Component {
     );
   }
 }
-
-export default LoginForm;

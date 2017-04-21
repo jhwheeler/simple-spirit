@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import Menu from './Menu';
 
-class About extends React.Component {
+export default class About extends React.Component {
   render() {
     return (
       <div className="about">
@@ -27,5 +27,3 @@ class About extends React.Component {
     );
   }
 }
-
-export default About;

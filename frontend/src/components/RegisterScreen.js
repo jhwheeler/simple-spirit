@@ -4,7 +4,7 @@ import Header from './Header';
 import RegisterForm from './RegisterForm';
 import Menu from './Menu';
 
-class RegisterScreen extends React.Component {
+export default class RegisterScreen extends React.Component {
   render() {
     return (
       <div className="register-screen">
@@ -16,4 +16,3 @@ class RegisterScreen extends React.Component {
   }
 }
 
-export default RegisterScreen;
