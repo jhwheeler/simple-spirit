@@ -1,15 +1,16 @@
 version: '3'
 
 services:
-  simple-node:
-    container_name: simple-node
-    hostname: simple-node
+  simple-spirit:
+    container_name: simple-spirit
+    hostname: simple-spirit
     restart: always
 
     build:
-      context: front
+      context: frontend
+      dockerfile: Dockerfile
     ports:
-      - "8723:8723"
+      - "8100:8100"
     depends_on:
       - mongo
 
