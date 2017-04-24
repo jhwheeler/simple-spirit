@@ -16,7 +16,8 @@ export default class About extends React.Component {
             <p>This space is here to help you listen to the silence. To help you connect with the beautifuly simplicity of Spirit.</p>
             <p>Read a koan and let it sink in. Repeat it a few times and just be with the sounds.</p>
             <p>If you feel up for an exploration, click on "make it real". An inquiry will appear to guide you to putting this wisdom into action.</p>
-            <p>Throughout the day, try this practice and see what arises...</p>
+            <p>Below the inquiry, you see "Write". This opens up a space for you to write with abandon.</p>
+            <p>When you tap "Clear", your thoughts will be cleared away, not saved anywhere. Take this chance to simply let go...</p>
             <Link to="/koans">
               <button className="button">Explore</button>
             </Link>
