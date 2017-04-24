@@ -9,7 +9,7 @@ function build_simple_mongo {
 }
 
 function build_simple_spirit {
-  docker build -f Dockerfile -t simple-spirit:0.1 .
+  docker build -f ./Dockerfile -t simple-spirit:0.1 .
 }
 
 function import_db {

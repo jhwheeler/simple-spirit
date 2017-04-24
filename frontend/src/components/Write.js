@@ -18,7 +18,7 @@ export default class Write extends React.Component {
           <fieldset>
             <textarea ref="write"></textarea>
             <div>
-              <input className="button" defaultValue="Clear" onClick={this.clearText}/>
+              <input type="button" className="button" defaultValue="Clear" onClick={this.clearText}/>
             </div>
           </fieldset>
         </form>
