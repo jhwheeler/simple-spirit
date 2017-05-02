@@ -13,7 +13,7 @@ WORKDIR /work/
 
 ADD package.json package.json
 
-ADD frontend/public/ public
+ADD frontend/public/ frontend/public
 
 ADD users/ users
 ADD server.js server.js
@@ -23,4 +23,4 @@ ADD models.js models.js
 
 RUN yarn
 
-CMD node server.js
+CMD nodemon server

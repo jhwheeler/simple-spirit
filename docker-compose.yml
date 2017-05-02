@@ -5,12 +5,9 @@ services:
     container_name: simple-spirit
     hostname: simple-spirit
     restart: always
-
-    build:
-      context: frontend
-      dockerfile: Dockerfile
+    image: simple-spirit
     ports:
-      - "8100:8100"
+      - "8123"
     depends_on:
       - mongo
 
