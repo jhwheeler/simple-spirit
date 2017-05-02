@@ -112,4 +112,8 @@ router.delete('/api/koan/:koanId', (req, res) => {
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
+router.get('*', (req, res) => {
+  res.redirect('/');
+});
+
 module.exports = {router}
