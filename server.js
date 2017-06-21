@@ -15,8 +15,6 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 
-app.use(require('express-status-monitor')());
-
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'frontend', 'public')));
@@ -35,7 +33,7 @@ app.use('/logout', logoutRouter);
 app.use('/', router);
 
 
-app.get(['/login', '/register', '/about', '/archive', '/koan/:koanId'], (req, res) => {
+app.get(['/login', '/register', '/inquiries', '/inquiry/:koanId'], (req, res) => {
   res.sendFile(path.resolve(__dirname, 'frontend', 'public', 'index.html'))});
 
 
