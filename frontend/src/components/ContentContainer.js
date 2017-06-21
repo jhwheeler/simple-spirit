@@ -8,7 +8,6 @@ import {Link} from 'react-router-dom';
 export default class ContentContainer extends React.Component {
   constructor() {
     super();
-    this.changeContent = this.changeContent.bind(this);
     this.state = {
       content: "koan",
       prompt: "make it real",
@@ -16,7 +15,7 @@ export default class ContentContainer extends React.Component {
     }
   }
 
-  changeContent(event) {
+  changeContent = event => {
     let content = this.state.content;
     let prompt = this.state.prompt;
     this.setState({
@@ -43,7 +42,7 @@ export default class ContentContainer extends React.Component {
     let renderedContent = null;
     if (this.state.content == "inquiry") {
       renderedContent = <Inquiry content={this.state.koan.inquiry}/>;
-      prompt = <Link to="/about"><Prompt prompt={this.state.prompt} onClick={this.changeContent}/></Link>;
+      prompt = <Link to="/"><Prompt prompt={this.state.prompt} onClick={this.changeContent}/></Link>;
     } else {
       renderedContent = null;
       prompt = <Prompt prompt={this.state.prompt} onClick={this.changeContent}/>;

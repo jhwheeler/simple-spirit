@@ -9,10 +9,7 @@ export default class Menu extends React.Component {
             <Link to="/" className="home-link">Home</Link>
           </div>
           <div className="col-3-always menu-link-div">
-            <Link to="/koans" className="archive-link">Koans</Link>
-          </div>
-          <div className="col-3-always menu-link-div">
-            <Link to="/about" className="about-link">About</Link>
+            <Link to="/inquiries" className="archive-link">Inquiries</Link>
           </div>
       </div>
     );
