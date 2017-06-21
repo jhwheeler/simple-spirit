@@ -32,7 +32,7 @@ export default class Inquiry extends React.Component {
             <h3>Inquiry</h3>
             <p>{this.props.content}</p>
           </div>
-          <button className="button" onClick={this.openWrite}>Write</button>
+          <button className="button" onClick={this.openWrite}>Write & Reflect</button>
         </div>
         <div className="row">
           {write}
