@@ -28,7 +28,7 @@ export default class Archive extends React.Component {
       archive = this.state.koans.map((koan) => (
         <div key={koan.koanId} className="archive-item">
           <div className="archive-link-container">
-              <Koan link={`koan/${koan.koanId}`} quote={koan.koan} />
+              <Koan link={`inquiry/${koan.koanId}`} quote={koan.koan} />
               <hr/>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default class Archive extends React.Component {
     }
 
     if ((this.state.koans !== null) && (this.state.koans.length < 1)) {
-      archive = <p>No koans available.</p>
+      archive = <p>No inquiries available.</p>
     }
 
     return (
@@ -44,7 +44,7 @@ export default class Archive extends React.Component {
         <Header/>
         <div className="row">
           <div className="archive-content">
-            <h2 className="archive-header">Koans</h2>
+            <h2 className="archive-header">Inquiries</h2>
           </div>
         </div>
         <div className="row">
