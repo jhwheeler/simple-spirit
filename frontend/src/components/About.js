@@ -13,13 +13,12 @@ export default class About extends React.Component {
           <div className="about-content">
             <p>Welcome to Simple Spirit.</p>
             <br/>
-            <p>This space is here to help you listen to the silence. To help you connect with the beautifuly simplicity of Spirit.</p>
-            <p>Read a koan and let it sink in. Repeat it a few times and just be with the sounds.</p>
-            <p>If you feel up for an exploration, click on "make it real". An inquiry will appear to guide you to putting this wisdom into action.</p>
-            <p>Below the inquiry, you see "Write". This opens up a space for you to write with abandon.</p>
-            <p>When you tap "Clear", your thoughts will be cleared away, not saved anywhere. Take this chance to simply let go...</p>
-            <Link to="/koans">
-              <button className="button">Explore</button>
+            <p>This space is here for you to listen to the silence. To connect with the beautiful simplicity of Spirit.</p>
+            <p>Read an inquiry and let it sink in. Repeat it a few times and just be with the sounds.</p>
+            <p>Below, you'll see "Write". This opens up a space for you to write with abandon.</p>
+            <p>When you tap "Clear", your thoughts will be cleared away, not saved anywhere. Take this chance to simply let go...and enjoy the silence.</p>
+            <Link to="/inquiries">
+              <button className="button">Inquire Within</button>
             </Link>
           </div>
         </div>
