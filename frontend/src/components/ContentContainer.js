@@ -22,7 +22,7 @@ export default class ContentContainer extends React.Component {
       content: content == "inquiry" ? "koan" : "inquiry"
     });
     this.setState({
-      prompt: content == "koan" ? "What is this?" : "make it real"
+      prompt: content == "koan" ? "What is this?" : "Make it real"
     });
   }
 
