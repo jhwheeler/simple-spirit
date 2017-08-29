@@ -6,7 +6,9 @@ export default class Prompt extends React.Component {
     return(
       <div className="prompt row">
         <button className="prompt-button" onClick={() => this.props.onClick()}>
-          {this.props.prompt}
+          <div className="prompt-button-text">
+            {this.props.prompt}
+          </div>
           <img className="arrow" src={arrow}/>
         </button>
       </div>
