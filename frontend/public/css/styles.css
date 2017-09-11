@@ -81,26 +81,8 @@ hr {
   margin: 20px 0px;
 }
 
-.prompt-button {
-  border: none;
-  background-color: transparent;
-  font-size: 14px;
-}
-
 .prompt-button-text {
   padding: 3px;
-}
-
-.prompt-button-text:hover {
-  cursor: pointer;
-  border: 1px solid #292526;
-}
-
-.arrow {
-  display: block;
-  margin: 0 auto;
-  margin-top: 10px;
-  width: 30px;
 }
 
 .inquiry {
@@ -216,8 +198,8 @@ fieldset {
   text-align: center;
 }
 
-.menu-link-div:hover {
-  color: #2400c6;
+.menu-link:hover {
+  color: #adadad;
 }
 
 .console-header {
