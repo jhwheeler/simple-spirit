@@ -10,7 +10,7 @@ export default class ContentContainer extends React.Component {
     super();
     this.state = {
       content: "koan",
-      prompt: "make it real",
+      prompt: "Make it real",
       koan: {}
     }
   }
