@@ -15,7 +15,7 @@ export default class Write extends React.Component {
       <div className="write">
         <form>
           <fieldset>
-            <textarea ref="write"></textarea>
+            <textarea ref="write" placeholder="What are you ready to release?"></textarea>
             <div>
               <input type="button" className="button" defaultValue="Clear & Enjoy" onClick={this.clearText}/>
             </div>
